@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# Pravalika Portfolio
+
+A premium full-stack developer portfolio built to showcase modern web development projects, technical skills, certifications, and professional experience through an immersive and recruiter-focused UI/UX experience.
+
+## Overview
+
+This portfolio is designed with a modern startup-inspired aesthetic influenced by Apple, Vercel, and contemporary SaaS platforms. The website focuses on clean architecture, reusable component systems, responsive layouts, smooth animations, and scalable frontend development practices.
+
+The goal of this project is to create a production-level developer portfolio that highlights:
+- Full-stack development skills
+- UI/UX engineering
+- AI-assisted development workflows
+- Real-world project architecture
+- Professional presentation for recruiters and clients
+
+---
+
+## Features
+
+- Premium futuristic UI/UX
+- Fully responsive design
+- Reusable component architecture
+- Smooth Framer Motion animations
+- Interactive project showcase
+- Skills and technology sections
+- Certificates section
+- GitHub and LinkedIn integration
+- Resume access and download
+- Modern glassmorphism design system
+- Optimized Next.js App Router structure
+
+---
+
+## Tech Stack
+
+### Frontend
+- Next.js 16
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+### UI & Design
+- Lucide React Icons
+- Glassmorphism effects
+- Responsive layout system
+- Reusable design components
+
+### Deployment
+- Vercel
+
+---
+
+## Project Structure
+
+```bash
+app/
+components/
+constants/
+data/
+lib/
+public/
+styles/
+types/
+````
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
+
+```bash
+git clone https://github.com/Ppoloju/pravalika-portfolio.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Future Improvements
 
-To learn more about Next.js, take a look at the following resources:
+* Dynamic project modal popups
+* Blog integration
+* Dark/light theme toggle
+* CMS integration
+* Backend-powered contact form
+* Project filtering system
+* Admin dashboard
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Live Demo
 
-## Deploy on Vercel
+Coming soon.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+Pravalika Poloju
+
+* GitHub: [https://github.com/Ppoloju](https://github.com/Ppoloju)
+* LinkedIn: Add your LinkedIn profile here
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+```
+```
