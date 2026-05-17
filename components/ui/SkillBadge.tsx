@@ -5,7 +5,8 @@ import {
   Database,
   Server,
   Wrench,
-  Cloud,
+  Braces,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -14,9 +15,10 @@ import type { SkillCategory } from "@/types/skill";
 const categoryIcons: Record<SkillCategory, LucideIcon> = {
   Frontend: Code2,
   Backend: Server,
+  Programming: Braces,
   Database: Database,
   Tools: Wrench,
-  Deployment: Cloud,
+  Other: Sparkles,
 };
 
 interface SkillBadgeProps {
@@ -33,7 +35,7 @@ export function SkillBadge({ name, category, className }: SkillBadgeProps) {
       className={cn(
         "inline-flex items-center gap-2 rounded-lg border border-white/10",
         "bg-white/[0.04] px-4 py-2 text-sm font-medium text-gray-300",
-        "transition-all duration-300 hover:border-purple-500/30 hover:text-white",
+        "transition-all duration-300 hover:scale-105 hover:border-purple-500/30 hover:text-white",
         "hover:shadow-[0_0_20px_-8px_rgba(168,85,247,0.4)]",
         className
       )}

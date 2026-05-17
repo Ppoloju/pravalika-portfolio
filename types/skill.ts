@@ -1,12 +1,12 @@
 export type SkillCategory =
   | "Frontend"
   | "Backend"
+  | "Programming"
   | "Database"
   | "Tools"
-  | "Deployment";
+  | "Other";
 
 export interface Skill {
   name: string;
   category: SkillCategory;
-  icon: string;
 }

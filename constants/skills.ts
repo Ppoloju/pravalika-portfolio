@@ -1,36 +1,40 @@
 import type { Skill } from "@/types/skill";
 
 export const skills: Skill[] = [
-  { name: "React", category: "Frontend", icon: "react" },
-  { name: "Next.js", category: "Frontend", icon: "nextjs" },
-  { name: "TypeScript", category: "Frontend", icon: "typescript" },
-  { name: "Tailwind CSS", category: "Frontend", icon: "tailwind" },
-  { name: "HTML/CSS", category: "Frontend", icon: "html" },
-  { name: "Framer Motion", category: "Frontend", icon: "motion" },
+  { name: "HTML", category: "Frontend" },
+  { name: "CSS", category: "Frontend" },
+  { name: "JavaScript", category: "Frontend" },
+  { name: "React JS", category: "Frontend" },
+  { name: "Next.js", category: "Frontend" },
+  { name: "Tailwind CSS", category: "Frontend" },
 
-  { name: "Node.js", category: "Backend", icon: "node" },
-  { name: "Express", category: "Backend", icon: "express" },
-  { name: "REST APIs", category: "Backend", icon: "api" },
-  { name: "Python", category: "Backend", icon: "python" },
+  { name: "Node.js", category: "Backend" },
+  { name: "Express.js", category: "Backend" },
 
-  { name: "PostgreSQL", category: "Database", icon: "postgres" },
-  { name: "MongoDB", category: "Database", icon: "mongo" },
-  { name: "Supabase", category: "Database", icon: "supabase" },
+  { name: "Python", category: "Programming" },
+  { name: "C Language", category: "Programming" },
 
-  { name: "Git", category: "Tools", icon: "git" },
-  { name: "Figma", category: "Tools", icon: "figma" },
-  { name: "VS Code", category: "Tools", icon: "vscode" },
-  { name: "Postman", category: "Tools", icon: "postman" },
+  { name: "MongoDB", category: "Database" },
+  { name: "PostgreSQL", category: "Database" },
+  { name: "Supabase", category: "Database" },
 
-  { name: "Vercel", category: "Deployment", icon: "vercel" },
-  { name: "Docker", category: "Deployment", icon: "docker" },
-  { name: "CI/CD", category: "Deployment", icon: "cicd" },
+  { name: "Git", category: "Tools" },
+  { name: "GitHub", category: "Tools" },
+  { name: "Cursor AI", category: "Tools" },
+  { name: "VS Code", category: "Tools" },
+  { name: "Google Slides", category: "Tools" },
+
+  { name: "Technical Support Fundamentals", category: "Other" },
+  { name: "Cybersecurity Foundations", category: "Other" },
+  { name: "Communication Skills", category: "Other" },
+  { name: "Team Collaboration", category: "Other" },
 ];
 
 export const skillCategories = [
   "Frontend",
   "Backend",
+  "Programming",
   "Database",
   "Tools",
-  "Deployment",
+  "Other",
 ] as const;

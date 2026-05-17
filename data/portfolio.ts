@@ -1,54 +1,38 @@
 export const portfolio = {
   name: "Poloju Pravalika",
-  role: "Full Stack Developer",
+  role: "Aspiring Full Stack Developer",
   tagline: "Building Modern Web Experiences",
   headline:
-    "I craft responsive, scalable web applications with clean UI/UX and robust backend systems.",
+    "B.Tech CSE (AI & ML) student at GITAM Hyderabad, passionate about modern UI/UX, full-stack development, and AI-assisted building. I enjoy turning ideas into clean, responsive web experiences while growing through internships, projects, and continuous learning.",
   email: "ppoloju@student.gitam.edu",
-  location: "Available for Remote & Hybrid Roles",
+  location: "Hyderabad, India · Open to Internships & Entry-Level Roles",
   resumePath: "/resume/resume.pdf",
   about: {
     intro:
-      "I'm a full-stack developer passionate about building products that are fast, accessible, and delightful to use. I combine strong engineering fundamentals with a sharp eye for design to deliver experiences that stand out.",
+      "I'm a Computer Science Engineering student specializing in AI & ML, with a strong interest in frontend development, full-stack fundamentals, and creative problem solving.",
     journey:
-      "My journey started with curiosity about how websites work — from styling static pages to architecting full-stack applications. Today, I build end-to-end solutions spanning frontend interfaces, backend APIs, databases, and deployment pipelines.",
+      "My journey began with academic projects in C and Python, expanded through a frontend internship at Chidhagini Group, and continues through certifications, club involvement, and hands-on learning with React, Next.js, and modern web tools.",
     focus: [
       {
-        title: "Frontend Engineering",
+        title: "Frontend Development",
         description:
-          "Pixel-perfect, responsive interfaces with React, Next.js, and modern CSS — optimized for performance and accessibility.",
+          "Building responsive interfaces with React JS, Next.js, and Tailwind CSS — focused on clean layouts, accessibility, and consistent UI patterns.",
       },
       {
-        title: "Backend Systems",
+        title: "Full-Stack Foundations",
         description:
-          "Scalable REST APIs, authentication flows, and database design with Node.js, Express, and PostgreSQL/MongoDB.",
+          "Learning backend development with Node.js and Express, alongside databases like MongoDB, PostgreSQL, and Supabase.",
       },
       {
-        title: "UI/UX Design",
+        title: "UI/UX & Design Thinking",
         description:
-          "User-centered design thinking — wireframes, design systems, and micro-interactions that elevate the experience.",
+          "Applying modern UI practices from internship work — improving usability, visual hierarchy, and interface consistency across applications.",
       },
       {
         title: "AI-Assisted Development",
         description:
-          "Leveraging AI tools to accelerate development while maintaining code quality, testing, and best practices.",
+          "Using tools like Cursor AI to learn faster, prototype ideas, and build projects more efficiently while strengthening core fundamentals.",
       },
     ],
   },
-  experience: [
-    {
-      role: "Full Stack Developer",
-      company: "Freelance / Personal Projects",
-      period: "2023 — Present",
-      description:
-        "Building production-grade web applications with modern stacks, focusing on clean architecture and recruiter-ready deliverables.",
-    },
-    {
-      role: "Frontend Developer Intern",
-      company: "Tech Startup",
-      period: "2023",
-      description:
-        "Developed responsive UI components, integrated REST APIs, and collaborated on design system implementation.",
-    },
-  ],
 } as const;

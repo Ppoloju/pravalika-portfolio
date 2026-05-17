@@ -5,10 +5,17 @@ import Image from "next/image";
 import { GlowCard } from "./GlowCard";
 import { OutlineButton } from "./OutlineButton";
 import type { Project } from "@/types/project";
+import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
 }
+
+const statusStyles: Record<Project["status"], string> = {
+  "Academic Project": "border-purple-500/30 bg-purple-500/10 text-purple-300",
+  "Hardware Project": "border-cyan-500/30 bg-cyan-500/10 text-cyan-300",
+  "In Progress": "border-amber-500/30 bg-amber-500/10 text-amber-300",
+};
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
@@ -27,6 +34,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        <span
+          className={cn(
+            "absolute right-4 top-4 rounded-full border px-3 py-1 text-xs font-medium backdrop-blur-sm",
+            statusStyles[project.status]
+          )}
+        >
+          {project.status}
+        </span>
       </div>
 
       <div className="flex flex-1 flex-col p-6 md:p-8">
@@ -49,14 +64,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <OutlineButton
-            href={project.githubUrl}
-            external
-            className="!px-4 !py-2 text-xs"
-          >
-            <Github className="h-4 w-4" />
-            GitHub
-          </OutlineButton>
+          {project.githubUrl ? (
+            <OutlineButton
+              href={project.githubUrl}
+              external
+              className="!px-4 !py-2 text-xs"
+            >
+              <Github className="h-4 w-4" />
+              GitHub
+            </OutlineButton>
+          ) : (
+            <span className="inline-flex items-center gap-2 rounded-xl border border-dashed border-white/15 px-4 py-2 text-xs text-gray-500">
+              <Github className="h-4 w-4" />
+              GitHub — Coming Soon
+            </span>
+          )}
           {project.liveUrl && (
             <OutlineButton
               href={project.liveUrl}

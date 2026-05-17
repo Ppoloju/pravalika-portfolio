@@ -13,7 +13,7 @@ export function About() {
       <Container>
         <SectionHeading
           label="About Me"
-          title="Crafting Digital Experiences"
+          title="Who I Am"
           description={portfolio.about.intro}
         />
 

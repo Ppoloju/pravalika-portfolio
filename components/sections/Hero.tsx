@@ -28,9 +28,17 @@ export function Hero() {
           <motion.p
             variants={fadeUp}
             transition={defaultTransition}
-            className="text-sm uppercase tracking-[0.2em] text-purple-400 mb-6"
+            className="text-sm uppercase tracking-[0.2em] text-purple-400 mb-4"
           >
             {portfolio.role}
+          </motion.p>
+
+          <motion.p
+            variants={fadeUp}
+            transition={{ ...defaultTransition, delay: 0.1 }}
+            className="mb-6 text-sm text-cyan-400/90"
+          >
+            B.Tech CSE (AI & ML) · GITAM Hyderabad
           </motion.p>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight text-white">
