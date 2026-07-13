@@ -6,7 +6,7 @@ export const portfolio = {
     "B.Tech CSE (AI & ML) student at GITAM Hyderabad, passionate about modern UI/UX, full-stack development, and AI-assisted building. I enjoy turning ideas into clean, responsive web experiences while growing through internships, projects, and continuous learning.",
   email: "ppoloju@student.gitam.edu",
   location: "Hyderabad, India · Open to Internships & Entry-Level Roles",
-  resumePath: "/resume/resume.pdf",
+  resumePath: "/resume/Pravalika Resume.pdf",
   about: {
     intro:
       "I'm a Computer Science Engineering student specializing in AI & ML, with a strong interest in frontend development, full-stack fundamentals, and creative problem solving.",

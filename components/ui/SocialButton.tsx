@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, FileText, type LucideIcon } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, Users, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { SocialIconName } from "@/constants/socials";
 
@@ -10,6 +10,7 @@ const iconMap: Record<SocialIconName, LucideIcon> = {
   linkedin: Linkedin,
   mail: Mail,
   "file-text": FileText,
+  users: Users,
 };
 
 interface SocialButtonProps {

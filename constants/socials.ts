@@ -1,4 +1,4 @@
-export type SocialIconName = "github" | "linkedin" | "mail" | "file-text";
+export type SocialIconName = "github" | "linkedin" | "mail" | "file-text" | "users";
 
 export const socialLinks: {
   label: string;
@@ -24,5 +24,10 @@ export const socialLinks: {
     label: "Resume",
     href: "/resume/Pravalika Resume.pdf",
     icon: "file-text",
+  },
+  {
+    label: "GSSOC",
+    href: "https://gssoc.girlscript.org/profile/3002bf55-3feb-2641-412f-acd1-a55f62a8f81d",
+    icon: "users",
   },
 ];
