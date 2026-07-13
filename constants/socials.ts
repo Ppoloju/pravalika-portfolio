@@ -27,7 +27,7 @@ export const socialLinks: {
   },
   {
     label: "GSSOC",
-    href: "https://gssoc.girlscript.org/profile/3002bf55-3feb-2641-412f-acd1-a55f62a8f81d",
+    href: "https://gssoc.girlscript.org/profile/3002bf55-3feb-412f-acd1-a55f62a8f81d",
     icon: "users",
   },
 ];
