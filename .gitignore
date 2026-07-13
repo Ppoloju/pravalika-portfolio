@@ -45,6 +45,7 @@ logs
 *.log
 
 # vscode
+.vscode
 .vscode-test
 
 # cache
@@ -56,3 +57,6 @@ pids
 *.pid
 *.seed
 *.pid.lock
+
+# OS
+Thumbs.db

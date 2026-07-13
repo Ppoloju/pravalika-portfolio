@@ -1,130 +1,124 @@
-
 # Pravalika Portfolio
 
-A premium full-stack developer portfolio built to showcase modern web development projects, technical skills, certifications, and professional experience through an immersive and recruiter-focused UI/UX experience.
+A modern, responsive portfolio website showcasing professional projects, skills, certifications, and experience.
 
 ## Overview
 
-This portfolio is designed with a modern startup-inspired aesthetic influenced by Apple, Vercel, and contemporary SaaS platforms. The website focuses on clean architecture, reusable component systems, responsive layouts, smooth animations, and scalable frontend development practices.
-
-The goal of this project is to create a production-level developer portfolio that highlights:
-- Full-stack development skills
-- UI/UX engineering
-- AI-assisted development workflows
-- Real-world project architecture
-- Professional presentation for recruiters and clients
-
----
+This portfolio is built with Next.js and features a clean, modern design with smooth animations and a professional layout optimized for recruiters and clients.
 
 ## Features
 
-- Premium futuristic UI/UX
-- Fully responsive design
-- Reusable component architecture
-- Smooth Framer Motion animations
+- Fully responsive design (mobile, tablet, desktop)
+- Smooth animations with Framer Motion
 - Interactive project showcase
 - Skills and technology sections
-- Certificates section
-- GitHub and LinkedIn integration
-- Resume access and download
-- Modern glassmorphism design system
-- Optimized Next.js App Router structure
-
----
+- Certificates display
+- Professional experience timeline
+- Education section
+- Social media integration
+- Modern glassmorphism design
 
 ## Tech Stack
 
-### Frontend
-- Next.js 16
-- React
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-
-### UI & Design
-- Lucide React Icons
-- Glassmorphism effects
-- Responsive layout system
-- Reusable design components
-
-### Deployment
-- Vercel
-
----
+- **Next.js 16** - React framework
+- **React UI Library**
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **Lucide React** - Icons
 
 ## Project Structure
 
-```bash
-app/
-components/
-constants/
-data/
-lib/
-public/
-styles/
-types/
-````
-
----
+```
+pravalika-portfolio/
+├── app/                 # Next.js app router pages
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Home page
+│   └── globals.css     # Global styles
+├── components/          # React components
+│   ├── layout/         # Layout components (Header, Footer)
+│   ├── sections/       # Page sections (Hero, Projects, Skills, etc.)
+│   └── ui/             # Reusable UI components
+├── constants/          # Static data (projects, skills, experience, etc.)
+├── data/              # Portfolio data
+├── lib/               # Utility functions and configurations
+├── public/            # Static assets (images, certificates)
+├── styles/            # Additional styles
+└── types/             # TypeScript type definitions
+```
 
 ## Getting Started
 
-Clone the repository:
+### Prerequisites
 
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
 ```bash
 git clone https://github.com/Ppoloju/pravalika-portfolio.git
+cd pravalika-portfolio
 ```
 
-Install dependencies:
-
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-Run the development server:
-
+3. Run the development server:
 ```bash
 npm run dev
 ```
 
-Open:
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Build for Production
 
 ```bash
-http://localhost:3000
+npm run build
+npm start
 ```
 
----
+## Customization
 
-## Future Improvements
+### Adding Projects
 
-* Dynamic project modal popups
-* Blog integration
-* Dark/light theme toggle
-* CMS integration
-* Backend-powered contact form
-* Project filtering system
-* Admin dashboard
+Edit `constants/projects.ts` to add or modify project information.
 
----
+### Updating Skills
 
-## Live Demo
+Edit `constants/skills.ts` to update your technical skills.
 
-Coming soon.
+### Adding Certificates
 
----
+Place certificate PDFs in the `public/certificates/` directory and update `constants/certificates.ts`.
+
+### Updating Experience
+
+Edit `constants/experience.ts` to add or modify work experience.
+
+### Updating Education
+
+Edit `constants/education.ts` to add or modify education details.
+
+## Deployment
+
+This project is optimized for deployment on Vercel:
+
+1. Push your code to GitHub
+2. Import the project in Vercel
+3. Deploy automatically
+
+Alternatively, you can build and deploy to any platform that supports Next.js.
 
 ## Author
 
-Pravalika Poloju
+**Pravalika Poloju**
 
-* GitHub: [https://github.com/Ppoloju](https://github.com/Ppoloju)
-* LinkedIn: Add your LinkedIn profile here
-
----
+- GitHub: [@Ppoloju](https://github.com/Ppoloju)
 
 ## License
 
 This project is licensed under the MIT License.
-
-```
-```
