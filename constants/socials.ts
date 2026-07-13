@@ -1,4 +1,4 @@
-export type SocialIconName = "github" | "linkedin" | "mail";
+export type SocialIconName = "github" | "linkedin" | "mail" | "file-text";
 
 export const socialLinks: {
   label: string;
@@ -12,12 +12,17 @@ export const socialLinks: {
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/poloju-pravalika-b81274343",
+    href: "https://www.linkedin.com/in/poloju-pravalika",
     icon: "linkedin",
   },
   {
     label: "Email",
     href: "mailto:ppoloju@student.gitam.edu",
     icon: "mail",
+  },
+  {
+    label: "Resume",
+    href: "/resume/Pravalika Resume.pdf",
+    icon: "file-text",
   },
 ];

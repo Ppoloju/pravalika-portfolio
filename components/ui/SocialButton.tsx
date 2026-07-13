@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, type LucideIcon } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { SocialIconName } from "@/constants/socials";
 
@@ -9,6 +9,7 @@ const iconMap: Record<SocialIconName, LucideIcon> = {
   github: Github,
   linkedin: Linkedin,
   mail: Mail,
+  "file-text": FileText,
 };
 
 interface SocialButtonProps {
@@ -29,8 +30,8 @@ export function SocialButton({
   return (
     <motion.a
       href={href}
-      target={icon === "mail" ? undefined : "_blank"}
-      rel={icon === "mail" ? undefined : "noopener noreferrer"}
+      target={icon === "mail" || icon === "file-text" ? undefined : "_blank"}
+      rel={icon === "mail" || icon === "file-text" ? undefined : "noopener noreferrer"}
       aria-label={label}
       whileHover={{ scale: 1.08, y: -2 }}
       whileTap={{ scale: 0.95 }}
