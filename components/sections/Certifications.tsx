@@ -10,6 +10,18 @@ import { ExternalLink, Clock, Award } from "lucide-react";
 import type { CertificationItem } from "@/types/certification";
 
 export function Certifications() {
+  const certificationOrder: Record<string, number> = {
+    "HackOps Bootcamp": 0,
+    "GSSOC '26": 1,
+    "HTML & CSS Certification": 2,
+    "Internship Certificate": 3,
+  };
+
+  const orderedCertifications = [...certifications].sort(
+    (a, b) =>
+      (certificationOrder[a.name] ?? 99) - (certificationOrder[b.name] ?? 99)
+  );
+
   return (
     <section id="certifications" className="py-24 md:py-32 relative">
       <Container>
@@ -26,7 +38,7 @@ export function Certifications() {
           variants={staggerContainer}
           className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {certifications.map((cert: CertificationItem) => (
+          {orderedCertifications.map((cert: CertificationItem) => (
             <motion.div key={cert.id} variants={staggerItem}>
               <GlowCard hover={true} className="h-full">
                 <div className="flex flex-col gap-4">
