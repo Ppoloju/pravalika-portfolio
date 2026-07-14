@@ -6,4 +6,5 @@ export interface ExperienceItem {
   duration: string;
   responsibilities: string[];
   technologies: string[];
+  certificateLink?: string;
 }

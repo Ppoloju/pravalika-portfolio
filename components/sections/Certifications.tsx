@@ -1,0 +1,85 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { GlowCard } from "@/components/ui/GlowCard";
+import { certifications } from "@/constants/certifications";
+import { staggerContainer, staggerItem } from "@/lib/animations";
+import { ExternalLink, Clock, Award } from "lucide-react";
+import type { CertificationItem } from "@/types/certification";
+
+export function Certifications() {
+  return (
+    <section id="certifications" className="py-24 md:py-32 relative">
+      <Container>
+        <SectionHeading
+          label="Certifications"
+          title="Professional Certifications"
+          description="Industry-recognized certifications and ongoing learning programs that validate my technical skills."
+        />
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={staggerContainer}
+          className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {certifications.map((cert: CertificationItem) => (
+            <motion.div key={cert.id} variants={staggerItem}>
+              <GlowCard hover={true} className="h-full">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-3 flex-1">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-purple-500/30">
+                        <Award className="h-5 w-5 text-purple-400" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-white leading-tight">
+                          {cert.name}
+                        </h3>
+                        <p className="mt-1 text-sm text-purple-400">
+                          {cert.issuer}
+                        </p>
+                      </div>
+                    </div>
+                    {cert.status === "In Progress" && (
+                      <span className="flex items-center gap-1.5 text-xs font-medium text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded-full border border-cyan-400/20">
+                        <Clock className="h-3 w-3" />
+                        In Progress
+                      </span>
+                    )}
+                  </div>
+
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    {cert.description}
+                  </p>
+
+                  <div className="mt-auto pt-4 border-t border-white/10">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-500">
+                        {cert.date}
+                      </span>
+                      {cert.link && (
+                        <a
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-xs font-medium text-purple-400 hover:text-purple-300 transition-colors group"
+                        >
+                          <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                          View Certificate
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </GlowCard>
+            </motion.div>
+          ))}
+        </motion.div>
+      </Container>
+    </section>
+  );
+}
