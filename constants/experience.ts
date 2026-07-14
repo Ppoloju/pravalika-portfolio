@@ -18,7 +18,6 @@ export const experiences: ExperienceItem[] = [
       "AI Automation",
       "Full-Stack Development",
     ],
-    certificateLink: "#",
   },
   {
     id: "2",
@@ -76,7 +75,6 @@ export const experiences: ExperienceItem[] = [
       "UI Design",
       "SDLC",
     ],
-    certificateLink: "#",
   },
   {
     id: "5",

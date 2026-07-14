@@ -8,7 +8,6 @@ export const certifications: CertificationItem[] = [
     description: "Intensive cybersecurity training program covering security assessment, penetration testing fundamentals, and hands-on experience with Hack The Box and TryHackMe platforms.",
     date: "Jun 2026",
     status: "In Progress",
-    link: "#",
   },
   {
     id: "2",
@@ -17,7 +16,6 @@ export const certifications: CertificationItem[] = [
     description: "Open-source contribution program working on meaningful projects with global developers, enhancing coding skills through community contributions.",
     date: "May 2026",
     status: "In Progress",
-    link: "#",
   },
   {
     id: "3",

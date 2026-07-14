@@ -85,7 +85,7 @@ export function Experience() {
                     ))}
                   </div>
 
-                  {exp.certificateLink && (
+                  {exp.certificateLink && exp.certificateLink !== "#" && (
                     <div className="mt-5 pt-5 border-t border-white/10">
                       <a
                         href={exp.certificateLink}
