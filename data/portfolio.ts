@@ -1,37 +1,38 @@
 export const portfolio = {
   name: "Poloju Pravalika",
-  role: "Aspiring Full Stack Developer",
-  tagline: "Building Modern Web Experiences",
+  role: "Full Stack Developer | Open-Source Enthusiast",
+  education: "B.Tech CSE (AI & ML) · GITAM Hyderabad",
+  tagline: "Building AI-Powered Solutions",
   headline:
-    "B.Tech CSE (AI & ML) student at GITAM Hyderabad, passionate about modern UI/UX, full-stack development, and AI-assisted building. I enjoy turning ideas into clean, responsive web experiences while growing through internships, projects, and continuous learning.",
+    "Third-year Computer Science Engineering student at GITAM Hyderabad, specializing in AI & ML. I build practical technology solutions through full-stack development, workflow automation, and AI-powered applications. Currently interning at Chidhagni Group, gaining hands-on experience with Java, SpringBoot, PostgreSQL, and automation tools like n8n. Passionate about solving real-world problems, exploring new technologies, and collaborating on open-source projects.",
   email: "ppoloju@student.gitam.edu",
   location: "Hyderabad, India · Open to Internships & Entry-Level Roles",
   resumePath: "/resume/Pravalika Resume.pdf",
   about: {
     intro:
-      "I'm a Computer Science Engineering student specializing in AI & ML, with a strong interest in frontend development, full-stack fundamentals, and creative problem solving.",
+      "I'm a third-year B.Tech student specializing in Computer Science Engineering (AI & ML) at GITAM Hyderabad, with a strong interest in building practical technology solutions and continuously expanding my skills.",
     journey:
-      "My journey began with academic projects in C and Python, expanded through a frontend internship at Chidhagini Group, and continues through certifications, club involvement, and hands-on learning with React, Next.js, and modern web tools.",
+      "My journey began with academic projects in C and Python, expanded through a Computer Science Engineering internship at Chidhagni Group, and continues through research publication, certifications, and hands-on learning with Java, SpringBoot, PostgreSQL, React, Next.js, and workflow automation tools like n8n.",
     focus: [
       {
-        title: "Frontend Development",
+        title: "Full-Stack Development",
         description:
-          "Building responsive interfaces with React JS, Next.js, and Tailwind CSS — focused on clean layouts, accessibility, and consistent UI patterns.",
+          "Building end-to-end applications with React JS, Next.js, Java, SpringBoot, and PostgreSQL — focused on creating scalable, user-friendly solutions.",
       },
       {
-        title: "Full-Stack Foundations",
+        title: "Workflow Automation",
         description:
-          "Learning backend development with Node.js and Express, alongside databases like MongoDB, PostgreSQL, and Supabase.",
+          "Leveraging n8n and automation tools to streamline processes, integrate APIs, and build intelligent workflows that improve efficiency.",
       },
       {
-        title: "UI/UX & Design Thinking",
+        title: "AI-Powered Solutions",
         description:
-          "Applying modern UI practices from internship work — improving usability, visual hierarchy, and interface consistency across applications.",
+          "Exploring AI and machine learning applications, from research publications on Explainable AI to building AI-assisted development tools and automation systems.",
       },
       {
-        title: "AI-Assisted Development",
+        title: "Open-Source & Collaboration",
         description:
-          "Using tools like Cursor AI to learn faster, prototype ideas, and build projects more efficiently while strengthening core fundamentals.",
+          "Active open-source enthusiast participating in programs like GSSOC, enjoying collaboration with developers worldwide and contributing to meaningful projects.",
       },
     ],
   },

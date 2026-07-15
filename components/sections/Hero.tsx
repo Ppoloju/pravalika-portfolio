@@ -38,10 +38,10 @@ export function Hero() {
             transition={{ ...defaultTransition, delay: 0.1 }}
             className="mb-6 text-sm text-cyan-400/90"
           >
-            B.Tech CSE (AI & ML) · GITAM Hyderabad
+            {portfolio.education}
           </motion.p>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight text-white">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-white">
             <AnimatedText text={portfolio.tagline} />
           </h1>
 

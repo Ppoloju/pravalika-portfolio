@@ -13,7 +13,7 @@ export function AnimatedText({ text, className, delay = 0 }: AnimatedTextProps) 
   const words = text.split(" ");
 
   return (
-    <span className={cn("inline-flex flex-wrap", className)}>
+    <span className={cn("inline-flex", className)}>
       {words.map((word, i) => (
         <motion.span
           key={`${word}-${i}`}
