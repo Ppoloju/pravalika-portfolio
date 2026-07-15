@@ -35,15 +35,24 @@ export const certifications: CertificationItem[] = [
   },
   {
     id: "5",
+    name: "Research Paper Publication",
+    issuer: "International Journal of Scientific Research and Engineering Trends",
+    description: "Published research paper titled 'The Explainable AI Paradox: When Transparency Improves Decision Quality And When It Creates Overconfidence' in Volume 12, Issue 3, May-June 2026.",
+    date: "Jun 2026",
+    status: "Completed",
+    link: "/certificates/research.jpeg",
+  },
+  {
+    id: "6",
     name: "Internship Certificate",
-    issuer: "CCPL",
+    issuer: "Chidhagni",
     description: "Certificate earned through the internship experience, highlighting practical exposure and professional growth in the field.",
     date: "2026",
     status: "Completed",
     link: "/certificates/2501 CCPL Internship Certificate Pravalika Poloju.pdf",
   },
   {
-    id: "6",
+    id: "7",
     name: "Python Basics",
     issuer: "University of Michigan",
     description: "Foundational certificate covering Python programming fundamentals and problem-solving basics.",
@@ -52,7 +61,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/Python Basics.pdf",
   },
   {
-    id: "7",
+    id: "8",
     name: "Crash Course on Python",
     issuer: "Google",
     description: "Introductory certificate focused on Python syntax, functions, and basic programming concepts.",
@@ -61,7 +70,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/Crash Course on Python.pdf",
   },
   {
-    id: "8",
+    id: "9",
     name: "React Basics",
     issuer: "Meta",
     description: "Certificate covering the fundamentals of React, components, and modern frontend development.",
@@ -70,7 +79,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/React Basics.pdf",
   },
   {
-    id: "9",
+    id: "10",
     name: "Technical Support Fundamentals",
     issuer: "Google",
     description: "Certificate covering core IT support concepts, troubleshooting, and customer support best practices.",
@@ -79,7 +88,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/Technical Support Fundamentals.pdf",
   },
   {
-    id: "10",
+    id: "11",
     name: "The Bits and Bytes of Computer Networking",
     issuer: "Coursera",
     description: "Certificate highlighting networking fundamentals, protocols, and practical IT infrastructure knowledge.",
@@ -88,7 +97,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/The Bits and Bytes of Computer Networking.pdf",
   },
   {
-    id: "11",
+    id: "12",
     name: "System Administration and IT Infrastructure Services",
     issuer: "Coursera",
     description: "Certificate focused on system administration, infrastructure management, and operational support.",
@@ -97,7 +106,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/System Administration and IT Infrastructure.pdf",
   },
   {
-    id: "12",
+    id: "13",
     name: "IT Security: Defense against the digital dark arts",
     issuer: "Coursera",
     description: "Certificate covering cybersecurity basics, threat awareness, and defensive practices.",
@@ -106,7 +115,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/IT Security Defense against the digital dark arts.pdf",
   },
   {
-    id: "13",
+    id: "14",
     name: "Foundations of Cybersecurity",
     issuer: "Google",
     description: "Certificate covering the essentials of cybersecurity concepts and security mindset.",
@@ -115,7 +124,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/Foundations of Cybersecurity.pdf",
   },
   {
-    id: "14",
+    id: "15",
     name: "Operating Systems and You: Becoming a Power User",
     issuer: "Coursera",
     description: "Certificate focused on operating systems, user productivity, and everyday system usage.",
@@ -124,7 +133,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/Operating Systems and You Becoming a Power User.pdf",
   },
   {
-    id: "15",
+    id: "16",
     name: "Introduction to Computers and Office Productivity Software",
     issuer: "Coursera",
     description: "Certificate covering computer fundamentals and essential office productivity tools.",
@@ -133,7 +142,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/Introduction to Computers and Office Productivity Software.pdf",
   },
   {
-    id: "16",
+    id: "17",
     name: "Everyday Excel Part 1",
     issuer: "Coursera",
     description: "Certificate highlighting practical spreadsheet skills and daily Excel usage.",
@@ -142,7 +151,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/Everyday Excel, Part 1.pdf",
   },
   {
-    id: "17",
+    id: "18",
     name: "Writing Professional Emails in English",
     issuer: "Coursera",
     description: "Certificate focused on writing effective professional emails and business communication.",
@@ -151,7 +160,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/Write Professional Emails in English.pdf",
   },
   {
-    id: "18",
+    id: "19",
     name: "Create Informative Presentations with Google Slides",
     issuer: "Coursera",
     description: "Certificate covering presentation design, storytelling, and professional slide creation.",
@@ -160,7 +169,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/Create Informative Presentations with Google Slides.pdf",
   },
   {
-    id: "19",
+    id: "20",
     name: "Quantitative Research Job Simulation",
     issuer: "JPMorgan Chase",
     description: "Certificate from the JPMorgan Quantitative Research job simulation, showcasing practical exposure to quantitative analysis and finance operations.",
@@ -169,7 +178,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/jpmorgan job simulation certificate.pdf",
   },
   {
-    id: "20",
+    id: "21",
     name: "Software Engineering Job Simulation",
     issuer: "JPMorgan Chase",
     description: "Certificate from the JPMorgan Software Engineering job simulation, highlighting practical experience in software development and engineering practices.",
@@ -178,7 +187,7 @@ export const certifications: CertificationItem[] = [
     link: "/certificates/jpmorgan sjob simulation certificate.pdf",
   },
   {
-    id: "21",
+    id: "22",
     name: "Tata Job Simulation",
     issuer: "Tata",
     description: "Certificate from the Tata job simulation experience, highlighting participation in a practical business scenario.",
