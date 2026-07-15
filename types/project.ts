@@ -1,6 +1,8 @@
 export type ProjectStatus =
   | "Academic Project"
   | "Hardware Project"
+  | "Personal Project"
+  | "Full Stack Project"
   | "In Progress";
 
 export interface Project {
