@@ -9,4 +9,8 @@ export type SkillCategory =
 export interface Skill {
   name: string;
   category: SkillCategory;
+  sources?: {
+    experienceIds?: string[];
+    projectIds?: string[];
+  };
 }
