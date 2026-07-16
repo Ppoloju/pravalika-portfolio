@@ -6,8 +6,9 @@ export const certifications: CertificationItem[] = [
     name: "HackOps Bootcamp",
     issuer: "HackOps",
     description: "Intensive cybersecurity training program covering security assessment, penetration testing fundamentals, and hands-on experience with Hack The Box and TryHackMe platforms.",
-    date: "Jun 2026",
-    status: "In Progress",
+    date: "Jul 2026",
+    status: "Completed",
+    link: "/certificates/Hackops Certification.jpeg",
   },
   {
     id: "2",
