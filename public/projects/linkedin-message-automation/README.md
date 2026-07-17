@@ -168,6 +168,115 @@ If the compose box isn't detected:
 - Check if LinkedIn's UI has changed (selectors may need updating)
 - Ensure no popups are blocking the overlay
 
+## n8n Integration Setup (Microsoft Excel & Smartsheet)
+
+### Overview
+
+This project can be integrated with n8n for workflow automation. However, there are known issues with Microsoft Excel credential setup and Smartsheet integration in Docker environments.
+
+### 1. Microsoft Excel Credential Issue (Docker Setup)
+
+**Problem**: Unable to connect Microsoft Excel in the n8n Docker environment.
+
+**Tried Accounts**:
+- **Personal Microsoft account** → Not linking (Error: `unauthorized_client: The client does not exist or is not enabled for consumers`)
+- **College account** → Cannot create or access credentials
+- **Company account (Chidhagni)** → Requires authorization approval (Error: `AADSTS700016: Application with identifier was not found in the directory`)
+
+**Result**: All accounts failed to connect due to authentication or permission issues.
+
+**Impact**: Excel automation is not working in the Docker setup.
+
+**Workaround**: For demo purposes, use the n8n Web Version where Microsoft Excel integration works properly.
+
+### 2. Smartsheet Integration Issue
+
+**Problem**: Smartsheet node is not available in n8n by default.
+
+**Result**: Cannot directly use Smartsheet in workflows. Requires alternative methods using API or external tools.
+
+### 3. Smartsheet Alternatives in n8n
+
+Since there is no native Smartsheet node, the following alternatives can be used:
+
+#### 3.1 HTTP Request Node (Best Alternative)
+
+This is the most recommended approach as Smartsheet provides a REST API.
+
+**What you can do**:
+- Read sheets
+- Add rows
+- Update rows
+- Delete rows
+- Search data
+
+**Example**:
+```bash
+GET https://api.smartsheet.com/2.0/sheets
+```
+
+**Headers**:
+```
+Authorization: Bearer YOUR_SMARTSHEET_TOKEN
+Content-Type: application/json
+```
+
+This is the closest replacement for a Smartsheet node.
+
+#### 3.2 Webhook-Based Integration
+
+Used for event-driven workflows.
+
+**Flow**: Smartsheet → Webhook → n8n
+
+**Use cases**:
+- Row added triggers workflow
+- Status updates sent to n8n
+
+#### 3.3 Middleware Tools (Zapier / Make)
+
+Used as a bridge between Smartsheet and n8n.
+
+**Flow**: Smartsheet → Zapier/Make → n8n
+
+**Use cases**:
+- Quick setup for demo
+- No coding required
+
+#### 3.4 Google Sheets / Excel Alternative
+
+If Smartsheet is not mandatory, alternatives include:
+- Google Sheets node (fully supported in n8n)
+- Excel node (works in n8n web version)
+
+These are easier and fully supported options.
+
+#### 3.5 Custom Node (Advanced Option)
+
+A Smartsheet node can be created manually.
+
+**Requirements**:
+- Custom node development
+- Installation via npm in Docker
+- Manual maintenance
+
+Not recommended unless required for production use.
+
+### 4. Current Working Setup (Demo)
+
+For demo purposes:
+- Using n8n Web Version
+- Microsoft Excel integration is working properly in web version
+- Workflows are being built and tested successfully
+
+### 5. Conclusion
+
+- Microsoft Excel integration is failing in Docker due to authentication and permission issues across personal, college, and company accounts
+- Smartsheet is not available as a native node in n8n
+- Best alternative for Smartsheet is HTTP Request node using REST API
+- For demo purposes, n8n web version with Excel is being used successfully
+- Webhooks, middleware tools, and Google Sheets are alternative options depending on use case
+
 ## Security Notes
 
 - **Never commit `auth.json`** to version control - it contains your LinkedIn session

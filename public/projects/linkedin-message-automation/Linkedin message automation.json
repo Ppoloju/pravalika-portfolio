@@ -1,0 +1,846 @@
+{
+  "name": "LinkedIn Automation System",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "worksheet",
+        "operation": "readRows",
+        "workbook": {
+          "__rl": true,
+          "value": "01N3R6VW722L5ORCIJMRFYAFHYPWJS32YL",
+          "mode": "list",
+          "cachedResultName": "contact info",
+          "cachedResultUrl": "https://chidhagniccpl-my.sharepoint.com/personal/pravalika_poloju_chidhagni_com/_layouts/15/Doc.aspx?sourcedoc=%7BE8FAD2FA-0989-4B64-8014-F87D932DEB0B%7D&file=contact%20info.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1"
+        },
+        "worksheet": {
+          "__rl": true,
+          "value": "{1C7DBD19-B87C-4E94-9F64-EBCC438CA998}",
+          "mode": "list",
+          "cachedResultName": "Sheet2",
+          "cachedResultUrl": "https://chidhagniccpl-my.sharepoint.com/personal/pravalika_poloju_chidhagni_com/_layouts/15/Doc.aspx?sourcedoc=%7BE8FAD2FA-0989-4B64-8014-F87D932DEB0B%7D&file=contact%20info.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&activeCell=Sheet2!A1"
+        },
+        "options": {}
+      },
+      "id": "301864ca-87a0-4b0b-b0a4-82de8d5d79b9",
+      "name": "Read Contact Info Sheet",
+      "type": "n8n-nodes-base.microsoftExcel",
+      "typeVersion": 2.2,
+      "position": [
+        464,
+        832
+      ],
+      "credentials": {
+        "microsoftExcelOAuth2Api": {
+          "id": "9K8eFJVX7GzaBeKJ",
+          "name": "Microsoft Excel OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "id": "59d8d8d3-9503-46fa-8355-0a22e14c9c18"
+            },
+            {
+              "leftValue": "={{ $json.linkedin_url }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              },
+              "id": "3a9c8e7f-1234-5678-9abc-def012345678"
+            },
+            {
+              "id": "fd369864-11c3-43c0-9ca3-2297ea7019e9",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "sent",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "3af9c0e9-e607-43f9-a240-1cc546404b95",
+      "name": "Filter New Leads",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        688,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "summary",
+              "value": "All leads processed successfully",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f7c10f4d-1253-4803-bf5e-5fb518f21e76",
+      "name": "All Leads Processed",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        880,
+        672
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://riverside-snub-ricotta.ngrok-free.dev/send-linkedin-message",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"id\": \"{{$json.id}}\",\n  \"name\": \"{{$json.name}}\",\n  \"email\": \"{{$json.email}}\",\n  \"linkedin_url\": \"{{$json.linkedin_url}}\",\n  \"personalized_message\": \"{{$json.personalized_message}}\"\n}",
+        "options": {}
+      },
+      "id": "53646ec6-b043-4984-8870-ab0ae75d8066",
+      "name": "Playwright LinkedIn Worker",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1536,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "worksheet",
+        "operation": "update",
+        "workbook": {
+          "__rl": true,
+          "value": "01N3R6VW722L5ORCIJMRFYAFHYPWJS32YL",
+          "mode": "list",
+          "cachedResultName": "contact info",
+          "cachedResultUrl": "https://chidhagniccpl-my.sharepoint.com/personal/pravalika_poloju_chidhagni_com/_layouts/15/Doc.aspx?sourcedoc=%7BE8FAD2FA-0989-4B64-8014-F87D932DEB0B%7D&file=contact%20info.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1"
+        },
+        "worksheet": {
+          "__rl": true,
+          "value": "{1C7DBD19-B87C-4E94-9F64-EBCC438CA998}",
+          "mode": "list",
+          "cachedResultName": "Sheet2",
+          "cachedResultUrl": "https://chidhagniccpl-my.sharepoint.com/personal/pravalika_poloju_chidhagni_com/_layouts/15/Doc.aspx?sourcedoc=%7BE8FAD2FA-0989-4B64-8014-F87D932DEB0B%7D&file=contact%20info.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&activeCell=Sheet2!A1"
+        },
+        "dataMode": "autoMap",
+        "columnToMatchOn": "id",
+        "options": {}
+      },
+      "id": "955a574c-5aea-49b8-96c4-f9475de5a000",
+      "name": "Update Contact Info Sheet",
+      "type": "n8n-nodes-base.microsoftExcel",
+      "typeVersion": 2.2,
+      "position": [
+        864,
+        1072
+      ],
+      "credentials": {
+        "microsoftExcelOAuth2Api": {
+          "id": "9K8eFJVX7GzaBeKJ",
+          "name": "Microsoft Excel OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "816186b2-dc5a-4a5e-afbe-a62a3c379cbd",
+      "name": "Loop Over Leads",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1216,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "maxItems": 30
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        944,
+        832
+      ],
+      "id": "4fa8591c-03b3-4feb-a097-d994f8dabc15",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        1072
+      ],
+      "id": "2f8d7456-fbdf-4f03-9f62-20b9dba813bc",
+      "name": "Wait",
+      "webhookId": "ed4e29ec-f7aa-4513-a1dd-c749ae8529fb"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours"
+            }
+          ]
+        }
+      },
+      "id": "ad25fe3e-573b-4b11-b84b-dd0408d71897",
+      "name": "Every one hour",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        832
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        208,
+        320
+      ],
+      "id": "0f0f420d-811e-4fd5-aa68-4f2ad02f2185",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "worksheet",
+        "operation": "readRows",
+        "workbook": {
+          "__rl": true,
+          "value": "01N3R6VW722L5ORCIJMRFYAFHYPWJS32YL",
+          "mode": "list",
+          "cachedResultName": "contact info",
+          "cachedResultUrl": "https://chidhagniccpl-my.sharepoint.com/personal/pravalika_poloju_chidhagni_com/_layouts/15/Doc.aspx?sourcedoc=%7BE8FAD2FA-0989-4B64-8014-F87D932DEB0B%7D&file=contact%20info.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1"
+        },
+        "worksheet": {
+          "__rl": true,
+          "value": "{1C7DBD19-B87C-4E94-9F64-EBCC438CA998}",
+          "mode": "list",
+          "cachedResultName": "Sheet2",
+          "cachedResultUrl": "https://chidhagniccpl-my.sharepoint.com/personal/pravalika_poloju_chidhagni_com/_layouts/15/Doc.aspx?sourcedoc=%7BE8FAD2FA-0989-4B64-8014-F87D932DEB0B%7D&file=contact%20info.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&activeCell=Sheet2!A1"
+        },
+        "options": {}
+      },
+      "id": "dc4ef00a-b9fa-48b8-9053-21fab252fac5",
+      "name": "Read Contact Info Sheet1",
+      "type": "n8n-nodes-base.microsoftExcel",
+      "typeVersion": 2.2,
+      "position": [
+        416,
+        320
+      ],
+      "credentials": {
+        "microsoftExcelOAuth2Api": {
+          "id": "9K8eFJVX7GzaBeKJ",
+          "name": "Microsoft Excel OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.relationship_type }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              },
+              "id": "59d8d8d3-9503-46fa-8355-0a22e14c9c18"
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "2714fde6-3e5a-4f3b-9413-a6a73991a0de",
+      "name": "Filter New Leads1",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        688,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "worksheet",
+        "operation": "update",
+        "workbook": {
+          "__rl": true,
+          "value": "01N3R6VW722L5ORCIJMRFYAFHYPWJS32YL",
+          "mode": "list",
+          "cachedResultName": "contact info",
+          "cachedResultUrl": "https://chidhagniccpl-my.sharepoint.com/personal/pravalika_poloju_chidhagni_com/_layouts/15/Doc.aspx?sourcedoc=%7BE8FAD2FA-0989-4B64-8014-F87D932DEB0B%7D&file=contact%20info.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1"
+        },
+        "worksheet": {
+          "__rl": true,
+          "value": "{1C7DBD19-B87C-4E94-9F64-EBCC438CA998}",
+          "mode": "list",
+          "cachedResultName": "Sheet2",
+          "cachedResultUrl": "https://chidhagniccpl-my.sharepoint.com/personal/pravalika_poloju_chidhagni_com/_layouts/15/Doc.aspx?sourcedoc=%7BE8FAD2FA-0989-4B64-8014-F87D932DEB0B%7D&file=contact%20info.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&activeCell=Sheet2!A1"
+        },
+        "dataMode": "autoMap",
+        "columnToMatchOn": "id",
+        "options": {}
+      },
+      "id": "e56e6997-46d2-4350-aba5-8825844552cc",
+      "name": "Update Contact Info Sheet1",
+      "type": "n8n-nodes-base.microsoftExcel",
+      "typeVersion": 2.2,
+      "position": [
+        2320,
+        352
+      ],
+      "credentials": {
+        "microsoftExcelOAuth2Api": {
+          "id": "9K8eFJVX7GzaBeKJ",
+          "name": "Microsoft Excel OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2032,
+        320
+      ],
+      "id": "6a2881de-7274-461a-9369-397d640e2bad",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"personalized_message\": \"Hi {{ $json.name }}, it's been a while! I came across your profile and would love to reconnect here on LinkedIn.\",\n  \"status\": \"\",\n  \"error\": \"\"\n} ",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1712,
+        560
+      ],
+      "id": "10bc4550-911e-4899-ae4a-1dbbb3d7e24e",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"personalized_message\": \"Hi {{ $json.name }}, its great connecting with you.\",\n  \"status\": \"\",\n  \"error\": \"\"\n} ",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1696,
+        416
+      ],
+      "id": "2dc90549-3389-4bc3-af18-c8de0464256a",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"personalized_message\": \"Hi {{ $json.name }}, it's been a while! I came across your profile and would love to reconnect here on LinkedIn.\",\n  \"status\": \"\",\n  \"error\": \"\"\n} ",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1696,
+        272
+      ],
+      "id": "1899f80b-e2b3-4cd8-93de-b0dcb1a84e80",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"personalized_message\": \"Hi {{$json.name}}\",\n  \"status\": \"\",\n  \"error\": \"\"\n} ",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1696,
+        128
+      ],
+      "id": "aec76965-37e4-4f5e-8d0b-9664f5f78650",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{$json.relationship_type}}",
+                    "rightValue": "friend",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "c5c204dc-9e4c-4f9d-9001-5321080c7311"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Friend"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "fd2a1341-17a9-4068-b6d4-44ecf2723496",
+                    "leftValue": "={{$json.relationship_type}}",
+                    "rightValue": "colleague",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Colleague"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "c074995c-ddd6-4ddb-9de3-d8f79cce2860",
+                    "leftValue": "={{$json.relationship_type}}",
+                    "rightValue": "prospect",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Prospect"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "fc5faf8a-1952-4928-9972-595196716ec0",
+                    "leftValue": "={{$json.relationship_type}}",
+                    "rightValue": "client",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Client"
+            }
+          ]
+        },
+        "looseTypeValidation": "",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        1408,
+        336
+      ],
+      "id": "f48e0a61-f5f0-4564-829c-e10da199e149",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "summary",
+              "value": "All leads processed successfully",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d6a66115-df7d-45d5-bd77-92681ad081ed",
+      "name": "All Leads Processed1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1216,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        960,
+        320
+      ],
+      "id": "a36b0d72-ae6d-460a-aee6-151acc6f1c51",
+      "name": "Loop Over Items"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Read Contact Info Sheet": {
+      "main": [
+        [
+          {
+            "node": "Filter New Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter New Leads": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Playwright LinkedIn Worker": {
+      "main": [
+        [
+          {
+            "node": "Update Contact Info Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Contact Info Sheet": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Leads": {
+      "main": [
+        [
+          {
+            "node": "All Leads Processed",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Playwright LinkedIn Worker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every one hour": {
+      "main": [
+        [
+          {
+            "node": "Read Contact Info Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Read Contact Info Sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Contact Info Sheet1": {
+      "main": [
+        [
+          {
+            "node": "Filter New Leads1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Contact Info Sheet1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Update Contact Info Sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter New Leads1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "All Leads Processed1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "b2455621-c1ef-4c0e-8ee6-153737de5a96",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "91a73adb1443901e0a763f878e44be98cdf3f494e064507a0524499ef21c277a"
+  },
+  "id": "J9rDQaP7ilcyrkAa",
+  "tags": []
+}
