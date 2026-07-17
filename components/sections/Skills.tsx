@@ -11,6 +11,16 @@ import { skills, skillCategories } from "@/constants/skills";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 import { getSkillSources } from "@/lib/skillSources";
 import type { SkillCategory } from "@/types/skill";
+import { Code2, Database, Server, Wrench, Braces, Sparkles, type LucideIcon } from "lucide-react";
+
+const categoryIcons: Record<SkillCategory, LucideIcon> = {
+  Frontend: Code2,
+  Backend: Server,
+  Programming: Braces,
+  Database: Database,
+  Tools: Wrench,
+  Other: Sparkles,
+};
 
 export function Skills() {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
@@ -25,11 +35,46 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 md:py-32 bg-gradient-to-b from-transparent via-gray-950/50 to-transparent relative overflow-hidden">
-      {/* Background decorative elements */}
+    <section id="skills" className="py-32 md:py-40 bg-gradient-to-b from-transparent via-gray-950/50 to-transparent relative overflow-hidden">
+      {/* Enhanced background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-500/8 rounded-full blur-[120px]"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-cyan-500/8 rounded-full blur-[100px]"
+        />
+        <motion.div
+          animate={{
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-pink-500/5 rounded-full blur-[80px]"
+        />
       </div>
 
       <Container className="relative z-10">
@@ -44,23 +89,29 @@ export function Skills() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={staggerContainer}
-          className="grid gap-5 md:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 md:gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3"
         >
           {skillCategories.map((category) => {
             const categorySkills = skills.filter(
               (s) => s.category === category
             );
+            const Icon = categoryIcons[category];
             return (
               <motion.div key={category} variants={staggerItem}>
-                <GlowCard hover={true} className="h-full p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_-8px_rgba(168,85,247,0.2)]">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="h-0.5 flex-1 bg-gradient-to-r from-cyan-500/60 to-transparent rounded-full" />
-                    <h3 className="text-sm font-bold uppercase tracking-[0.25em] text-cyan-400 whitespace-nowrap">
+                <GlowCard hover={true} className="h-full p-7 transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_50px_-12px_rgba(168,85,247,0.25)] backdrop-blur-sm bg-white/[0.02]">
+                  <div className="flex items-center gap-3 mb-6">
+                    <motion.div
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.6 }}
+                      className="rounded-xl p-2.5 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/20"
+                    >
+                      <Icon className="h-5 w-5 text-cyan-400" />
+                    </motion.div>
+                    <h3 className="text-sm font-bold uppercase tracking-[0.25em] text-cyan-400">
                       {category}
                     </h3>
-                    <div className="h-0.5 flex-1 bg-gradient-to-l from-cyan-500/60 to-transparent rounded-full" />
                   </div>
-                  <div className="flex flex-wrap gap-2.5">
+                  <div className="flex flex-wrap gap-3">
                     {categorySkills.map((skill) => (
                       <SkillBadge
                         key={skill.name}

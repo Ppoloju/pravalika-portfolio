@@ -21,24 +21,20 @@ export function SkillSourcesModal({
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md"
-          />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md"
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-2xl rounded-3xl border border-white/10 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 p-6 sm:p-8 shadow-2xl"
           >
-            <div
-              className="relative w-full max-w-2xl rounded-3xl border border-white/10 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 p-6 sm:p-8 shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
               <button
                 onClick={onClose}
                 className="absolute right-4 top-4 rounded-xl p-2.5 text-gray-400 transition-all duration-200 hover:text-white hover:bg-white/10 hover:scale-110"
@@ -133,9 +129,8 @@ export function SkillSourcesModal({
                   Press ESC or click outside to close
                 </button>
               </div>
-            </div>
           </motion.div>
-        </>
+        </motion.div>
       )}
     </AnimatePresence>
   );
