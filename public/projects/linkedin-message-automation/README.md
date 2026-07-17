@@ -2,57 +2,204 @@
 
 An automated LinkedIn messaging system built with Playwright and Express that sends personalized messages to LinkedIn profiles via a REST API.
 
-## Features
+## Introduction
 
-- **Automated LinkedIn Messaging**: Send personalized messages to LinkedIn profiles programmatically
-- **Session Persistence**: Saves authentication state to avoid repeated logins
-- **Smart Element Detection**: Robust selectors to find Message buttons and compose boxes
-- **Person Verification**: Verifies the correct person is in the conversation before sending
-- **Popup Handling**: Automatically dismisses LinkedIn popups and overlays
-- **REST API**: Simple HTTP API for integration with other systems
-- **Browser Automation**: Uses Playwright for reliable browser automation
+This project is an automation system that sends LinkedIn messages automatically. Instead of manually opening LinkedIn and sending messages, this system does everything automatically using code.
 
-## Demo
+It works using:
+- **Node.js** (backend server)
+- **Playwright** (browser automation)
+- **n8n** (workflow in browser)
+- **ngrok** (public link for testing)
 
-A demo recording is available in this project: `Recording 2026-06-08 105957.mp4`
+## Project Goal
 
-## Prerequisites
+The main goal of this project is:
+- Send LinkedIn messages automatically
+- Use API requests to trigger automation
+- Connect n8n workflow with backend
+- Automate browser actions using Playwright
 
-- Node.js (v14 or higher)
-- npm or yarn
+## Required Software (Install Before Starting)
 
-## Installation
+### 3.1 Node.js
 
-1. Install dependencies:
+Download: https://nodejs.org
+
+Check installation:
+```bash
+node -v
+npm -v
+```
+
+### 3.2 Google Chrome or Edge
+
+Used by Playwright to open LinkedIn.
+
+### 3.3 ngrok
+
+Download: https://ngrok.com/download
+
+After installation, connect account:
+```bash
+ngrok config add-authtoken YOUR_TOKEN
+```
+
+### 3.4 n8n
+
+No installation required. Open in browser: http://localhost:5678
+
+## Project Folder Structure
+
+After extracting the project:
+```
+linkedin-message-automation/
+├── index.js
+├── package.json
+├── package-lock.json
+├── README.md
+├── Linkedin message automation.json (n8n workflow)
+├── node_modules/   (created after npm install)
+└── auth.json       (created after first login)
+```
+
+## Important Notes Before Starting
+
+- **Do NOT send auth.json** - it contains your LinkedIn session and is created after first login
+- n8n runs in browser (no installation needed)
+- The n8n workflow JSON file is included: `Linkedin message automation.json`
+
+## Step-by-Step Setup Process
+
+Follow exactly in order:
+
+### STEP 1: Extract Project
+
+Extract the project folder. Better to create a folder on desktop and then unzip.
+
+### STEP 2: Open Terminal
+
+Go to the project folder and right-click → "Open in Terminal"
+
+### STEP 3: Install Dependencies
+
+Run this command:
 ```bash
 npm install
 ```
 
-2. Install Playwright browsers:
+What happens here:
+- All required packages are downloaded
+- node_modules folder is created automatically
+
+### STEP 4: Install Playwright Browsers
+
 ```bash
 npx playwright install chromium
 ```
 
-## Usage
+### STEP 5: Start Backend Server
 
-### Start the Server
-
+Run:
 ```bash
-npm start
+node index.js
 ```
 
-The server will start on `http://localhost:3000`
+After running:
+- Server starts
+- You will see: `Server running on http://localhost:3000`
+- Keep this terminal open
 
-### First Run - Authentication
+### STEP 6: Start ngrok (NEW TERMINAL)
 
-On the first run, the browser will open and you'll need to:
-1. Manually log in to LinkedIn when prompted
-2. The session will be saved to `auth.json`
-3. Subsequent runs will use the saved session
+Open a new terminal in the same folder. Run:
+```bash
+ngrok http 3000
+```
 
-### API Endpoint
+After running:
+- ngrok creates a public link like: `https://riverside-snub-ricotta.ngrok-free.dev`
+- This link is used for API calls
 
-#### POST /send-linkedin-message
+### STEP 7: Open n8n in Browser
+
+Open: http://localhost:5678
+
+Now do these steps:
+1. Import the workflow from `Linkedin message automation.json`
+2. Open the webhook node
+3. Replace URL with ngrok URL: `https://riverside-snub-ricotta.ngrok-free.dev/send-linkedin-message`
+4. Click "Activate Workflow"
+
+### STEP 8: First Time Login (VERY IMPORTANT)
+
+Because auth.json is NOT included:
+1. Run: `node index.js`
+2. A browser opens automatically
+3. It opens LinkedIn login page
+4. Enter username and password manually
+5. Login successfully
+6. System saves login session inside auth.json automatically
+
+## How System Works (Flow)
+
+When you send a request:
+1. Request goes to ngrok URL
+2. n8n receives request
+3. n8n triggers backend
+4. Node.js receives data
+5. Playwright opens LinkedIn
+6. Goes to profile
+7. Types message
+8. Sends message
+
+## API Testing (IMPORTANT PART)
+
+### STEP 8.1: Open PowerShell
+
+Open PowerShell in any folder.
+
+### STEP 8.2: Run Test Request
+
+Replace ngrok link and run:
+```powershell
+Invoke-RestMethod `
+  -Uri "https://riverside-snub-ricotta.ngrok-free.dev/send-linkedin-message" `
+  -Method POST `
+  -ContentType "application/json" `
+  -Body '{"linkedin_url":"https://www.linkedin.com/in/example-profile","personalized_message":"Hello from test"}'
+```
+
+### What This Test Does
+
+When you run the above:
+1. PowerShell sends request
+2. Request goes to ngrok
+3. n8n receives request
+4. Backend processes data
+5. Playwright opens LinkedIn profile
+6. Message is typed automatically
+7. Message is sent
+
+## Full Running Order (VERY IMPORTANT)
+
+Always follow this order:
+
+**Step 1:** `npm install`
+
+**Step 2:** `node index.js`
+
+**Step 3:** `ngrok http 3000`
+
+**Step 4:** Open http://localhost:5678
+
+**Step 5:** Activate workflow in n8n
+
+**Step 6:** Run PowerShell test request
+
+## API Endpoint
+
+### POST /send-linkedin-message
 
 Send a personalized message to a LinkedIn profile.
 
@@ -93,80 +240,71 @@ Send a personalized message to a LinkedIn profile.
 }
 ```
 
-### Example Usage with cURL
+## Common Errors and Fixes
 
+### Error 1: node_modules missing
+
+**Fix:**
 ```bash
-curl -X POST http://localhost:3000/send-linkedin-message \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "John Doe",
-    "linkedin_url": "https://www.linkedin.com/in/johndoe",
-    "personalized_message": "Hi John, I came across your profile and would like to connect."
-  }'
+npm install
 ```
 
-### Example Usage with JavaScript
+### Error 2: Playwright browser not opening
 
-```javascript
-const response = await fetch('http://localhost:3000/send-linkedin-message', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    name: 'John Doe',
-    linkedin_url: 'https://www.linkedin.com/in/johndoe',
-    personalized_message: 'Hi John, I came across your profile and would like to connect.'
-  })
-});
-
-const result = await response.json();
-console.log(result);
+**Fix:**
+```bash
+npx playwright install chromium
 ```
 
-## How It Works
+### Error 3: Server not starting
 
-1. **Browser Launch**: Launches Chromium browser in fullscreen mode
-2. **Authentication**: Checks for saved session in `auth.json`, prompts for login if needed
-3. **Navigation**: Navigates to the target LinkedIn profile
-4. **Message Button**: Finds and clicks the Message button using multiple selector strategies
-5. **Verification**: Verifies the correct person is in the conversation
-6. **Compose Box**: Locates the message compose box in the conversation overlay
-7. **Message Input**: Types the personalized message character by character
-8. **Send**: Clicks the Send button or uses Enter key to send the message
-9. **Cleanup**: Closes the page and returns success status
+**Fix:**
+```bash
+node index.js
+```
+
+### Error 4: n8n not triggering
+
+**Fix:**
+- Check ngrok URL
+- Make sure workflow is active
+
+### Error 5: Port already in use
+
+**Fix:**
+```bash
+npx kill-port 3000
+```
+
+### Session Expired
+
+If you see "LinkedIn redirected to security page" error:
+1. Delete the `auth.json` file
+2. Restart the server
+3. Log in manually again
+
+## Features
+
+- **Automated LinkedIn Messaging**: Send personalized messages to LinkedIn profiles programmatically
+- **Session Persistence**: Saves authentication state to avoid repeated logins
+- **Smart Element Detection**: Robust selectors to find Message buttons and compose boxes
+- **Person Verification**: Verifies the correct person is in the conversation before sending
+- **Popup Handling**: Automatically dismisses LinkedIn popups and overlays
+- **REST API**: Simple HTTP API for integration with other systems
+- **Browser Automation**: Uses Playwright for reliable browser automation
 
 ## Key Components
 
 - **index.js**: Main application file containing Express server and Playwright automation logic
 - **auth.json**: Stores LinkedIn session authentication (auto-generated)
 - **package.json**: Project dependencies and scripts
+- **Linkedin message automation.json**: n8n workflow file for integration
 
 ## Dependencies
 
 - **express**: Web server framework
 - **playwright**: Browser automation library
 - **cors**: Cross-Origin Resource Sharing support
-
-## Troubleshooting
-
-### Session Expired
-If you see "LinkedIn redirected to security page" error:
-1. Delete the `auth.json` file
-2. Restart the server
-3. Log in manually again
-
-### Message Button Not Found
-The script uses multiple fallback selectors to find the Message button. If it still fails:
-- Ensure the LinkedIn profile URL is correct
-- Check if you're already connected to the person
-- Verify the profile has a Message button (some profiles don't)
-
-### Compose Box Not Found
-If the compose box isn't detected:
-- Wait for the message overlay to fully load
-- Check if LinkedIn's UI has changed (selectors may need updating)
-- Ensure no popups are blocking the overlay
 
 ## n8n Integration Setup (Microsoft Excel & Smartsheet)
 
