@@ -11,7 +11,7 @@ export function Footer() {
       <Container>
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <p className="text-sm text-gray-500">
-            © {year} {portfolio.name}. All rights reserved.
+            © {year} {portfolio.name}. All rights reserved. Built with passion.
           </p>
 
           <div className="flex items-center gap-3">
