@@ -10,6 +10,7 @@ interface GradientButtonProps {
   onClick?: () => void;
   className?: string;
   type?: "button" | "submit";
+  external?: boolean;
 }
 
 export function GradientButton({
@@ -18,6 +19,7 @@ export function GradientButton({
   onClick,
   className,
   type = "button",
+  external = false,
 }: GradientButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3",
@@ -32,7 +34,12 @@ export function GradientButton({
   if (href) {
     return (
       <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-        <Link href={href} className={classes}>
+        <Link 
+          href={href} 
+          className={classes}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
+        >
           {children}
         </Link>
       </motion.div>

@@ -67,7 +67,7 @@ export function Navbar() {
           </ul>
 
           <div className="hidden md:block">
-            <GradientButton href={portfolio.resumePath}>Resume</GradientButton>
+            <GradientButton href={portfolio.resumePath} external>Resume</GradientButton>
           </div>
 
           <button

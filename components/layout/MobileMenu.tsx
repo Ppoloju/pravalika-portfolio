@@ -60,7 +60,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </ul>
 
             <div className="mt-auto pt-6 sm:pt-8">
-              <GradientButton href={portfolio.resumePath} className="w-full">
+              <GradientButton href={portfolio.resumePath} external className="w-full">
                 Resume
               </GradientButton>
             </div>
