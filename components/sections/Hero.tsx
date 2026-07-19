@@ -11,7 +11,7 @@ import { fadeUp, defaultTransition } from "@/lib/animations";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center py-24 md:py-32">
+    <section className="relative flex min-h-screen items-center py-16 sm:py-20 md:py-32">
       <Container className="relative z-10">
         <motion.div
           initial="hidden"
@@ -28,7 +28,7 @@ export function Hero() {
           <motion.p
             variants={fadeUp}
             transition={defaultTransition}
-            className="text-sm uppercase tracking-[0.2em] text-purple-400 mb-4"
+            className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-purple-400 mb-3 sm:mb-4"
           >
             {portfolio.role}
           </motion.p>
@@ -36,19 +36,19 @@ export function Hero() {
           <motion.p
             variants={fadeUp}
             transition={{ ...defaultTransition, delay: 0.1 }}
-            className="mb-6 text-sm text-cyan-400/90"
+            className="mb-4 sm:mb-6 text-xs sm:text-sm text-cyan-400/90"
           >
             {portfolio.education}
           </motion.p>
 
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-white">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white">
             <AnimatedText text={portfolio.tagline} />
           </h1>
 
           <motion.p
             variants={fadeUp}
             transition={{ ...defaultTransition, delay: 0.3 }}
-            className="mt-6 text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto"
+            className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto"
           >
             {portfolio.headline}
           </motion.p>
@@ -56,7 +56,7 @@ export function Hero() {
           <motion.div
             variants={fadeUp}
             transition={{ ...defaultTransition, delay: 0.4 }}
-            className="mt-10 flex flex-wrap items-center justify-center gap-4"
+            className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
           >
             <GradientButton href="#projects">View Projects</GradientButton>
             <OutlineButton href="#contact">Contact Me</OutlineButton>
@@ -65,14 +65,14 @@ export function Hero() {
           <motion.div
             variants={fadeUp}
             transition={{ ...defaultTransition, delay: 0.6 }}
-            className="mt-16 flex justify-center"
+            className="mt-12 sm:mt-16 flex justify-center"
           >
             <a
               href="#about"
               aria-label="Scroll to about section"
               className="flex flex-col items-center gap-2 text-gray-500 transition-colors hover:text-gray-300"
             >
-              <span className="text-xs uppercase tracking-[0.2em]">Scroll</span>
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em]">Scroll</span>
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

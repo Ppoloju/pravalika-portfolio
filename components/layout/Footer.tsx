@@ -7,14 +7,14 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 py-12">
+    <footer className="border-t border-white/10 py-8 sm:py-12">
       <Container>
-        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <p className="text-sm text-gray-500">
+        <div className="flex flex-col items-center justify-between gap-4 sm:gap-6 md:flex-row">
+          <p className="text-xs sm:text-sm text-gray-500">
             © {year} {portfolio.name}. All rights reserved. Built with passion.
           </p>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {socialLinks.map((social) => (
               <SocialButton
                 key={social.label}

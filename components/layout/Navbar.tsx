@@ -41,23 +41,23 @@ export function Navbar() {
         )}
       >
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
+          className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4"
           aria-label="Main navigation"
         >
           <Link
             href="#"
-            className="text-lg font-semibold tracking-tight text-white"
+            className="text-base sm:text-lg font-semibold tracking-tight text-white"
           >
             {portfolio.name}
             <span className="text-purple-400">.</span>
           </Link>
 
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="hidden items-center gap-6 sm:gap-8 md:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="group relative text-sm font-medium text-gray-400 transition-colors hover:text-white"
+                  className="group relative text-xs sm:text-sm font-medium text-gray-400 transition-colors hover:text-white"
                 >
                   {link.label}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-purple-500 to-cyan-400 transition-all duration-300 group-hover:w-full" />
@@ -73,9 +73,9 @@ export function Navbar() {
           <button
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
-            className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white md:hidden"
+            className="rounded-lg p-2 sm:p-2.5 text-gray-400 transition-colors hover:bg-white/10 hover:text-white md:hidden"
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
         </nav>
       </motion.header>

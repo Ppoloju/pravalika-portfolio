@@ -27,21 +27,21 @@ export function SectionHeading({
       variants={fadeUp}
       transition={defaultTransition}
       className={cn(
-        "mb-12 md:mb-16",
+        "mb-8 sm:mb-12 md:mb-16",
         align === "center" && "text-center",
         className
       )}
     >
       {label && (
-        <p className="text-sm uppercase tracking-[0.2em] text-purple-400 mb-3">
+        <p className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-purple-400 mb-2 sm:mb-3">
           {label}
         </p>
       )}
-      <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
           {description}
         </p>
       )}

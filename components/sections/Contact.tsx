@@ -26,7 +26,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-16 sm:py-20 md:py-32">
       <Container>
         <SectionHeading
           label="Get In Touch"
@@ -34,7 +34,7 @@ export function Contact() {
           description="Open to full-time roles, internships, and collaboration. Reach out — I'd love to connect."
         />
 
-        <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 md:gap-8 lg:grid-cols-2">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -43,13 +43,13 @@ export function Contact() {
             transition={defaultTransition}
           >
             <GlowCard hover={false} className="h-full">
-              <h3 className="text-xl md:text-2xl font-semibold text-white">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
                 Connect With Me
               </h3>
-              <p className="mt-3 text-base text-gray-400 leading-relaxed">
+              <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-400 leading-relaxed">
                 {portfolio.location}
               </p>
-              <p className="mt-2 text-base text-gray-400">
+              <p className="mt-1.5 sm:mt-2 text-sm sm:text-base text-gray-400">
                 <a
                   href={`mailto:${portfolio.email}`}
                   className="text-purple-400 transition-colors hover:text-purple-300"
@@ -58,7 +58,7 @@ export function Contact() {
                 </a>
               </p>
 
-              <div className="mt-8 flex gap-3">
+              <div className="mt-6 sm:mt-8 flex gap-2 sm:gap-3">
                 {socialLinks.map((social) => (
                   <SocialButton
                     key={social.label}
@@ -79,11 +79,11 @@ export function Contact() {
             transition={{ ...defaultTransition, delay: 0.15 }}
           >
             <GlowCard hover={false}>
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-5">
                 <div>
                   <label
                     htmlFor="name"
-                    className="mb-2 block text-sm uppercase tracking-[0.2em] text-gray-500"
+                    className="mb-1.5 sm:mb-2 block text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-gray-500"
                   >
                     Name
                   </label>
@@ -95,14 +95,14 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState((s) => ({ ...s, name: e.target.value }))
                     }
-                    className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+                    className="w-full rounded-lg sm:rounded-xl border border-white/10 bg-white/[0.04] px-3 sm:px-4 py-2.5 sm:py-3 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="mb-2 block text-sm uppercase tracking-[0.2em] text-gray-500"
+                    className="mb-1.5 sm:mb-2 block text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-gray-500"
                   >
                     Email
                   </label>
@@ -114,14 +114,14 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState((s) => ({ ...s, email: e.target.value }))
                     }
-                    className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+                    className="w-full rounded-lg sm:rounded-xl border border-white/10 bg-white/[0.04] px-3 sm:px-4 py-2.5 sm:py-3 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
                     placeholder="you@email.com"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="mb-2 block text-sm uppercase tracking-[0.2em] text-gray-500"
+                    className="mb-1.5 sm:mb-2 block text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-gray-500"
                   >
                     Message
                   </label>
@@ -133,12 +133,12 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState((s) => ({ ...s, message: e.target.value }))
                     }
-                    className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+                    className="w-full resize-none rounded-lg sm:rounded-xl border border-white/10 bg-white/[0.04] px-3 sm:px-4 py-2.5 sm:py-3 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
                     placeholder="Tell me about your opportunity..."
                   />
                 </div>
                 <GradientButton type="submit" className="w-full sm:w-auto">
-                  <Send className="h-4 w-4" />
+                  <Send className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   Send Message
                 </GradientButton>
               </form>

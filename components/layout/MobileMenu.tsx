@@ -29,29 +29,29 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed right-0 top-0 z-50 flex h-full w-[min(100%,320px)] flex-col border-l border-white/10 bg-[#0a0a0a]/95 backdrop-blur-xl p-6 md:hidden"
+            className="fixed right-0 top-0 z-50 flex h-full w-[min(100%,280px)] sm:w-[min(100%,320px)] flex-col border-l border-white/10 bg-[#0a0a0a]/95 backdrop-blur-xl p-5 sm:p-6 md:hidden"
             aria-label="Mobile navigation"
           >
             <div className="flex items-center justify-between">
-              <span className="text-lg font-semibold text-white">
+              <span className="text-base sm:text-lg font-semibold text-white">
                 {portfolio.name}
               </span>
               <button
                 onClick={onClose}
                 aria-label="Close menu"
-                className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white"
+                className="rounded-lg p-1.5 sm:p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white"
               >
-                <X className="h-5 w-5" />
+                <X className="h-4 w-4 sm:h-5 sm:w-5" />
               </button>
             </div>
 
-            <ul className="mt-10 flex flex-col gap-6">
+            <ul className="mt-8 sm:mt-10 flex flex-col gap-5 sm:gap-6">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={onClose}
-                    className="text-lg font-medium text-gray-300 transition-colors hover:text-white"
+                    className="text-base sm:text-lg font-medium text-gray-300 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -59,7 +59,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               ))}
             </ul>
 
-            <div className="mt-auto pt-8">
+            <div className="mt-auto pt-6 sm:pt-8">
               <GradientButton href={portfolio.resumePath} className="w-full">
                 Resume
               </GradientButton>

@@ -11,7 +11,7 @@ import { staggerContainer, staggerItem, fadeUp } from "@/lib/animations";
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32">
+    <section id="projects" className="py-16 sm:py-20 md:py-32">
       <Container>
         <SectionHeading
           label="Projects"
@@ -24,7 +24,7 @@ export function Projects() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-4 sm:gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project) => (
             <motion.div key={project.id} variants={staggerItem}>
@@ -38,18 +38,18 @@ export function Projects() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={fadeUp}
-          className="mt-8 md:mt-10"
+          className="mt-6 sm:mt-8 md:mt-10"
         >
           <GlowCard hover={false} className="border-dashed border-purple-500/20">
-            <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-purple-500/30 bg-purple-500/10">
-                <Sparkles className="h-6 w-6 text-purple-400" aria-hidden />
+            <div className="flex flex-col items-center gap-3 sm:gap-4 text-center sm:flex-row sm:text-left">
+              <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg sm:rounded-xl border border-purple-500/30 bg-purple-500/10">
+                <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 text-purple-400" aria-hidden />
               </div>
               <div>
-                <h3 className="text-xl md:text-2xl font-semibold text-white">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
                   Currently Learning & Building More Projects
                 </h3>
-                <p className="mt-2 text-base text-gray-400 leading-relaxed">
+                <p className="mt-2 text-sm sm:text-base text-gray-400 leading-relaxed">
                   I&apos;m actively expanding my portfolio with React, Next.js,
                   and full-stack projects — combining coursework, certifications,
                   and AI-assisted development to grow as a modern web developer.
