@@ -1,80 +1,107 @@
-# Pravalika Portfolio
+# Pravalika Poloju | Portfolio
 
-A modern, responsive portfolio website showcasing professional projects, skills, certifications, and experience.
+A modern personal portfolio website built with Next.js to showcase experience, skills, projects, certifications, and career highlights for recruiters and collaborators.
 
 ## Overview
 
-This portfolio is built with Next.js and features a clean, modern design with smooth animations and a professional layout optimized for recruiters and clients.
+This portfolio is designed as a clean, responsive, and professional landing page for a Computer Science student and developer. It highlights:
 
-## Features
+- full-stack development work
+- AI and machine learning interests
+- project experience and technical skills
+- internship and learning journey
+- certifications and achievements
 
-- Fully responsive design (mobile, tablet, desktop)
-- Smooth animations with Framer Motion
-- Interactive project showcase
-- Skills and technology sections
-- Certificates display
-- Professional experience timeline
-- Education section
-- Social media integration
-- Modern glassmorphism design
+The site uses a polished dark-mode aesthetic with animated sections, soft gradients, and structured content blocks.
+
+## Featured Sections
+
+- Hero introduction and personal branding
+- About section with academic and career journey
+- Skills showcase
+- Project portfolio cards
+- Work experience timeline
+- Certifications gallery
+- Contact section with social links
 
 ## Tech Stack
 
-- **Next.js 16** - React framework
-- **React UI Library**
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Framer Motion** - Animations
-- **Lucide React** - Icons
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- React Icons
 
 ## Project Structure
 
-```
+```bash
 pravalika-portfolio/
-├── app/                 # Next.js app router pages
-│   ├── layout.tsx      # Root layout
-│   ├── page.tsx        # Home page
-│   └── globals.css     # Global styles
-├── components/          # React components
-│   ├── layout/         # Layout components (Header, Footer)
-│   ├── sections/       # Page sections (Hero, Projects, Skills, etc.)
-│   └── ui/             # Reusable UI components
-├── constants/          # Static data (projects, skills, experience, etc.)
-├── data/              # Portfolio data
-├── lib/               # Utility functions and configurations
-├── public/            # Static assets (images, certificates)
-├── styles/            # Additional styles
-└── types/             # TypeScript type definitions
+├── app/                     # App router pages and global styles
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── layout/             # Navbar, Footer, MobileMenu
+│   ├── sections/           # Hero, About, Skills, Projects, Experience, Certifications, Contact
+│   └── ui/                 # Reusable card, button, badge, and animation components
+├── constants/              # Static portfolio data (projects, skills, experience, social links, certifications)
+├── data/
+│   └── portfolio.ts        # Core personal profile data
+├── lib/                    # Utility functions and animation helpers
+├── public/
+│   ├── certificates/      # Certification assets
+│   ├── projects/          # Project-related media
+│   └── resume/            # Resume PDF
+├── styles/                 # Additional CSS support
+├── types/                  # TypeScript interfaces and definitions
+├── .eslintrc*              # ESLint config
+├── LICENSE                 # Project license
+├── next.config.ts          # Next.js config
+├── package.json            # Scripts and dependencies
+├── postcss.config.mjs      # PostCSS config
+├── tailwind.config.ts      # Tailwind config
+├── tsconfig.json           # TypeScript config
+├── README.md               # Project documentation
+└── eslint.config.mjs       # ESLint flat config
 ```
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ installed
-- npm or yarn package manager
+- Node.js 18 or newer
+- npm or yarn
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Ppoloju/pravalika-portfolio.git
 cd pravalika-portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
-3. Run the development server:
+3. Start the development server:
+
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open your browser at:
 
-### Build for Production
+```text
+http://localhost:3000
+```
+
+### Production Build
 
 ```bash
 npm run build
@@ -83,42 +110,37 @@ npm start
 
 ## Customization
 
-### Adding Projects
+You can update portfolio content by editing these files:
 
-Edit `constants/projects.ts` to add or modify project information.
+- `data/portfolio.ts` — core profile details, headline, about text, and contact info
+- `constants/projects.ts` — project list and descriptions
+- `constants/skills.ts` — technology stack and categories
+- `constants/experience.ts` — work experience details
+- `constants/certifications.ts` — certificate data and metadata
+- `constants/socials.ts` — social media/profile links
 
-### Updating Skills
-
-Edit `constants/skills.ts` to update your technical skills.
-
-### Adding Certificates
-
-Place certificate PDFs in the `public/certificates/` directory and update `constants/certificates.ts`.
-
-### Updating Experience
-
-Edit `constants/experience.ts` to add or modify work experience.
-
-### Updating Education
-
-Edit `constants/education.ts` to add or modify education details.
+You can also add resume files and certificate PDFs under `public/resume/` and `public/certificates/`.
 
 ## Deployment
 
-This project is optimized for deployment on Vercel:
+This project is optimized for deployment with Vercel.
 
-1. Push your code to GitHub
-2. Import the project in Vercel
-3. Deploy automatically
+Typical workflow:
 
-Alternatively, you can build and deploy to any platform that supports Next.js.
+1. Push the repository to GitHub
+2. Import it into Vercel
+3. Configure the framework as Next.js
+4. Deploy
 
-## Author
+It can also be deployed to any host that supports Next.js applications.
 
-**Pravalika Poloju**
+## Contact
 
+- Name: Pravalika Poloju
+- Email: ppoloju@student.gitam.edu
 - GitHub: [@Ppoloju](https://github.com/Ppoloju)
+- Portfolio: [Live site](https://your-domain.example.com) (replace with your deployment URL)
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
