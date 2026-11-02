@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Github } from "lucide-react";
+import { Check, Clock3, Code2, ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import { GlowCard } from "./GlowCard";
 import { OutlineButton } from "./OutlineButton";
@@ -12,17 +12,16 @@ interface ProjectCardProps {
 }
 
 const statusStyles: Record<Project["status"], string> = {
-  "Academic Project": "border-purple-500/30 bg-purple-500/10 text-purple-300",
-  "Hardware Project": "border-cyan-500/30 bg-cyan-500/10 text-cyan-300",
-  "In Progress": "border-amber-500/30 bg-amber-500/10 text-amber-300",
-  "Personal Project": "border-green-500/30 bg-green-500/10 text-green-300",
-  "Full Stack Project": "border-pink-500/30 bg-pink-500/10 text-pink-300",
+  Completed: "border-emerald-400/20 bg-emerald-400/10 text-emerald-200",
+  "In Progress": "border-amber-400/20 bg-amber-400/10 text-amber-200",
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const StatusIcon = project.status === "Completed" ? Check : Clock3;
+
   return (
     <GlowCard className="flex h-full flex-col overflow-hidden p-0">
-      <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-purple-900/30 via-black to-cyan-900/20">
+      <div className="relative aspect-[1.7] w-full overflow-hidden bg-gradient-to-br from-[#171429] via-[#0c111b] to-[#0b2025]">
         {project.image ? (
           <Image
             src={project.image}
@@ -31,39 +30,56 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className="object-cover"
           />
         ) : (
-          <div className="flex h-full items-center justify-center">
-            <div className="h-16 w-16 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm" />
+          <div className="relative flex h-full items-center justify-center overflow-hidden">
+            <div className="absolute -left-10 -top-20 h-48 w-48 rounded-full bg-purple-500/15 blur-3xl" />
+            <div className="absolute -bottom-24 -right-10 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl" />
+            <span className="absolute bottom-4 left-4 font-mono text-[10px] tracking-[0.2em] text-white/40">
+              SELECTED WORK
+            </span>
+            <Code2
+              className="relative h-9 w-9 text-white/30"
+              strokeWidth={1.25}
+              aria-hidden
+            />
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
         <span
           className={cn(
-            "absolute right-3 sm:right-4 top-3 sm:top-4 rounded-full border px-2 sm:px-3 py-0.75 sm:py-1 text-[10px] sm:text-xs font-medium backdrop-blur-sm",
+            "absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-medium backdrop-blur-sm sm:right-4 sm:top-4 sm:text-xs",
             statusStyles[project.status]
           )}
         >
+          <StatusIcon className="h-3 w-3" aria-hidden />
           {project.status}
         </span>
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5 md:p-6 lg:p-8">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
+        {project.context && (
+          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-gray-500 sm:text-[11px]">
+            {project.context}
+          </p>
+        )}
+        <h3 className="text-lg font-semibold leading-snug text-white sm:text-xl">
           {project.title}
         </h3>
         <p className="mt-2 sm:mt-3 flex-1 text-sm sm:text-base text-gray-400 leading-relaxed">
           {project.description}
         </p>
 
-        <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2">
-          {project.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.75 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-medium text-gray-400"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+        {project.techStack.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
+            {project.techStack.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.75 text-[10px] font-medium text-gray-400 sm:px-2.5 sm:py-1 sm:text-xs"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
 
         <div className="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
           {project.githubUrl ? (
