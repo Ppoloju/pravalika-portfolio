@@ -34,14 +34,14 @@ export function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed inset-x-0 top-0 z-50 px-3 pt-3 transition-all duration-300 sm:px-6 sm:pt-4",
           scrolled
-            ? "border-b border-white/10 bg-black/70 backdrop-blur-xl"
-            : "bg-transparent"
+            ? "drop-shadow-lg drop-shadow-black/20"
+            : ""
         )}
       >
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4"
+          className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-[#0b0d14]/80 px-4 py-3 shadow-xl shadow-black/20 backdrop-blur-xl sm:px-6 sm:py-3.5"
           aria-label="Main navigation"
         >
           <Link
@@ -57,10 +57,10 @@ export function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="group relative text-xs sm:text-sm font-medium text-gray-400 transition-colors hover:text-white"
+                  className="group relative text-xs sm:text-sm font-medium text-gray-400 transition-colors hover:text-cyan-200"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-purple-500 to-cyan-400 transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-purple-400 to-cyan-300 transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
             ))}
