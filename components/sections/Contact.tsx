@@ -21,8 +21,11 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const mailto = `mailto:${portfolio.email}?subject=Portfolio Contact from ${formState.name}&body=${encodeURIComponent(formState.message)}`;
-    window.location.href = mailto;
+    const params = new URLSearchParams({
+      subject: `Portfolio Contact from ${formState.name}`,
+      body: `Name: ${formState.name}\nEmail: ${formState.email}\n\n${formState.message}`,
+    });
+    window.location.href = `mailto:${portfolio.email}?${params.toString()}`;
   };
 
   return (
