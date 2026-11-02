@@ -1,14 +1,10 @@
-export type ProjectStatus =
-  | "Academic Project"
-  | "Hardware Project"
-  | "Personal Project"
-  | "Full Stack Project"
-  | "In Progress";
+export type ProjectStatus = "Completed" | "In Progress";
 
 export interface Project {
   id: string;
   title: string;
   description: string;
+  context?: string;
   techStack: string[];
   status: ProjectStatus;
   githubUrl?: string;
