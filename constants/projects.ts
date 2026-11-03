@@ -190,7 +190,7 @@ export const projects: Project[] = [
     id: "offline-emergency-mode",
     title: "ResQNET — iQOO Hackathon",
     description:
-      "An offline-first emergency communication app built for the iQOO Hackathon. ResQNET combines device-to-device SOS relays, trusted-contact and location sharing, local AI alert prioritization, and disaster coordination features when internet or cellular service is unavailable.",
+      "An offline-first emergency mesh network with Normal, Emergency, and Disaster modes. It relays SOS messages device to device and supports on-device AI detection and encrypted communication when internet or cellular service is unavailable.",
     context: "Offline emergency mode · 05/2026 — 07/26 · Team project with Vaishnavi & Satvika",
     techStack: ["React", "TypeScript", "Express", "SQLite"],
     status: "Completed",
@@ -201,7 +201,7 @@ export const projects: Project[] = [
     id: "grassgate",
     title: "Grassgate",
     description:
-      "An offline, voice-first outdoor companion that checks you are outside before responding. Ask about plants and wildlife, get a short outdoor activity, keep a private on-device field journal, and compile a printable weekly zine.",
+      "An offline, voice-first outdoor companion powered by local AI and grounded in species information. It includes a private field journal and tools for creating printable field zines.",
     context: "Hacktoberfest",
     techStack: ["Python", "Ollama", "Gemma 3n"],
     status: "In Progress",
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     id: "explain-it-sideways",
     title: "Explain It Sideways",
     description:
-      "An AI learning tool that teaches technical concepts from different angles, including everyday analogies, humor, visual diagrams, and structured 2-, 5-, or 10-mark exam answers, with adjustable learning depth.",
+      "An AI learning tool that makes complex concepts easier to understand through everyday analogies, meme-style explanations, visual diagrams, and structured exam answers, with adjustable learning depth.",
     context: "Hacktoberfest · WorkWild",
     techStack: ["React", "Vite", "Express", "Mermaid", "Gemma 4"],
     status: "Completed",
