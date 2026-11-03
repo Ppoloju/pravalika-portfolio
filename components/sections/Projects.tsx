@@ -10,14 +10,36 @@ import { projects } from "@/constants/projects";
 import { staggerContainer, staggerItem, fadeUp } from "@/lib/animations";
 
 export function Projects() {
+  const completedCount = projects.filter(
+    (project) => project.status === "Completed"
+  ).length;
+  const inProgressCount = projects.length - completedCount;
+
   return (
     <section id="projects" className="py-16 sm:py-20 md:py-32">
       <Container>
         <SectionHeading
           label="Projects"
-          title="Academic & Hands-On Work"
-          description="Honest snapshots of projects I've built through coursework, team collaboration, and practical experimentation."
+          title="A little of what I’ve built"
+          description="A growing collection of coursework, hackathon builds, internship work, research, and collaborations."
         />
+
+        <div className="mb-8 grid grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/[0.08] bg-white/[0.025] px-2 py-4 sm:mb-10 sm:px-6 sm:py-5">
+          {[
+            { label: "Projects", value: projects.length },
+            { label: "Completed", value: completedCount },
+            { label: "In Progress", value: inProgressCount },
+          ].map((stat) => (
+            <div key={stat.label} className="px-2 text-center sm:px-4">
+              <p className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
+                {stat.value.toString().padStart(2, "0")}
+              </p>
+              <p className="mt-1 text-[10px] text-gray-500 sm:text-xs">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
 
         <motion.div
           initial="hidden"
@@ -47,12 +69,12 @@ export function Projects() {
               </div>
               <div>
                 <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
-                  Currently Learning & Building More Projects
+                  What’s next
                 </h3>
                 <p className="mt-2 text-sm sm:text-base text-gray-400 leading-relaxed">
-                  I&apos;m actively expanding my portfolio with React, Next.js,
-                  and full-stack projects — combining coursework, certifications,
-                  and AI-assisted development to grow as a modern web developer.
+                  {inProgressCount} projects are in progress across coursework,
+                  internship work, research, and team collaborations. I&apos;m
+                  looking forward to sharing updates as they take shape.
                 </p>
               </div>
             </div>

@@ -37,8 +37,12 @@ export function SkillBadge({ name, category, className, onClick, isActive }: Ski
   const hasSources = sources.length > 0;
 
   return (
-    <motion.span
+    <motion.button
+      type="button"
       onClick={hasSources ? onClick : undefined}
+      disabled={!hasSources}
+      aria-haspopup={hasSources ? "dialog" : undefined}
+      aria-expanded={hasSources ? isActive : undefined}
       whileHover={hasSources ? { scale: 1.05, y: -2 } : {}}
       whileTap={hasSources ? { scale: 0.98 } : {}}
       className={cn(
@@ -69,6 +73,6 @@ export function SkillBadge({ name, category, className, onClick, isActive }: Ski
           className="h-1.5 w-1.5 rounded-full bg-cyan-400 ml-1"
         />
       )}
-    </motion.span>
+    </motion.button>
   );
 }
