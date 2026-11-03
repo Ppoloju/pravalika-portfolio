@@ -52,7 +52,7 @@ export const projects: Project[] = [
     id: "jarvis",
     title: "Jarvis — Desktop Assistant",
     description:
-      "A Python desktop-assistant project exploring voice interaction, laptop task automation, and productivity features.",
+      "An AI-powered desktop assistant with voice interaction, laptop automation, and productivity features.",
     context: "Desktop assistant · Shaurya",
     techStack: ["Python"],
     status: "In Progress",
@@ -158,7 +158,7 @@ export const projects: Project[] = [
     id: "signal-labs",
     title: "Signal Labs — AI Attention Layer",
     description:
-      "An incident-management attention layer that ingests operational events, groups related events into signals, and assigns explainable risk scores and priorities. Optional AI triage adds a root-cause hypothesis, evidence, and suggested next steps in a searchable dashboard.",
+      "A system of attention that turns thousands of raw operational events into the few decisions that need human attention, grouping related events into signals and adding explainable priorities with optional AI-assisted triage.",
     context: "AI Attention Layer for Alert Management",
     techStack: ["Next.js", "TypeScript", "PostgreSQL", "Redis"],
     status: "Completed",
