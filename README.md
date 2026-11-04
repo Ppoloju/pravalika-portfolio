@@ -139,7 +139,6 @@ It can also be deployed to any host that supports Next.js applications.
 - Name: Pravalika Poloju
 - Email: ppoloju@student.gitam.edu
 - GitHub: [@Ppoloju](https://github.com/Ppoloju)
-- Portfolio: [Live site](https://your-domain.example.com) (replace with your deployment URL)
 
 ## License
 
