@@ -29,8 +29,11 @@ export function Certifications() {
     "Create Informative Presentations with Google Slides": 15,
     "Writing Professional Emails in English": 16,
     "Everyday Excel Part 1": 17,
-    "JPMorgan Job Simulation": 18,
-    "Tata Job Simulation": 19,
+    "Quantitative Research Job Simulation": 18,
+    "Software Engineering Job Simulation": 19,
+    "Tata Job Simulation": 20,
+    "Networking Basics": 21,
+    "Exploring Networking with Cisco Packet Tracer": 22,
   };
 
   const orderedCertifications = [...certifications].sort(

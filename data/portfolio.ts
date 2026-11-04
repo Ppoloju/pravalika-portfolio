@@ -7,7 +7,7 @@ export const portfolio = {
     "Third-year Computer Science Engineering student at GITAM Hyderabad, specializing in AI & ML. I build practical technology solutions through full-stack development, workflow automation, and AI-powered applications. Currently interning at Chidhagni Group, gaining hands-on experience with Java, SpringBoot, PostgreSQL, and automation tools like n8n. Passionate about solving real-world problems, exploring new technologies, and collaborating on open-source projects.",
   email: "ppoloju@student.gitam.edu",
   location: "Hyderabad, India · Open to Internships & Entry-Level Roles",
-  resumePath: "/resume/Pravalika Resume.pdf",
+  resumePath: "/resume/Poloju Pravalika Resume .pdf",
   about: {
     intro:
       "I'm a third-year B.Tech student specializing in Computer Science Engineering (AI & ML) at GITAM Hyderabad, with a strong interest in building practical technology solutions and continuously expanding my skills.",

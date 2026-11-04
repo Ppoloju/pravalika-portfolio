@@ -22,7 +22,7 @@ export const socialLinks: {
   },
   {
     label: "Resume",
-    href: "/resume/Pravalika Resume.pdf",
+    href: "/resume/Poloju Pravalika Resume .pdf",
     icon: "file-text",
   },
   {
