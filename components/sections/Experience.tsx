@@ -15,7 +15,7 @@ export function Experience() {
         <SectionHeading
           label="Experience"
           title="Professional Journey"
-          description="Internships, volunteering, and leadership roles that shaped my growth as an aspiring developer."
+          description="Internships, volunteering, club membership, and leadership roles that shape my growth as an aspiring developer."
         />
 
         <motion.div
@@ -52,14 +52,18 @@ export function Experience() {
                         {exp.role}
                       </h3>
                       <p className="mt-0.5 sm:mt-1 text-sm sm:text-base text-purple-400">{exp.company}</p>
-                      <p className="mt-1 sm:mt-2 flex items-center gap-1.5 text-xs sm:text-sm text-gray-500">
-                        <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" aria-hidden />
-                        {exp.location}
-                      </p>
+                      {exp.location && (
+                        <p className="mt-1 sm:mt-2 flex items-center gap-1.5 text-xs sm:text-sm text-gray-500">
+                          <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" aria-hidden />
+                          {exp.location}
+                        </p>
+                      )}
                     </div>
-                    <span className="shrink-0 text-xs sm:text-sm text-gray-500">
-                      {exp.duration}
-                    </span>
+                    {exp.duration && (
+                      <span className="shrink-0 text-xs sm:text-sm text-gray-500">
+                        {exp.duration}
+                      </span>
+                    )}
                   </div>
 
                   <ul className="mt-4 sm:mt-5 space-y-2 sm:space-y-2.5">

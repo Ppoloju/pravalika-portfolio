@@ -2,6 +2,13 @@ import type { ExperienceItem } from "@/types/experience";
 
 export const experiences: ExperienceItem[] = [
   {
+    id: "7",
+    role: "Member",
+    company: "ACM Club",
+    responsibilities: ["Member of the ACM computing community."],
+    technologies: [],
+  },
+  {
     id: "1",
     role: "Computer Science Engineering Intern",
     company: "Chidhagni Group",

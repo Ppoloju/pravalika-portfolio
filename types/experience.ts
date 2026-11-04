@@ -2,8 +2,8 @@ export interface ExperienceItem {
   id: string;
   role: string;
   company: string;
-  location: string;
-  duration: string;
+  location?: string;
+  duration?: string;
   responsibilities: string[];
   technologies: string[];
   certificateLink?: string;
