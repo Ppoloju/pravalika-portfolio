@@ -81,7 +81,7 @@ export function Skills() {
         <SectionHeading
           label="Skills"
           title="Technical Expertise"
-          description="Skills developed through coursework, internships, certifications, and hands-on projects. Click on any skill to see where it was applied."
+          description="Skills developed through coursework, internships, certifications, and hands-on projects. Select a skill with an indicator to see where it was applied."
         />
 
         <motion.div

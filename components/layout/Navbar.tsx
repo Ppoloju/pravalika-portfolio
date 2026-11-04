@@ -45,7 +45,7 @@ export function Navbar() {
           aria-label="Main navigation"
         >
           <Link
-            href="#"
+            href="/"
             className="text-base sm:text-lg font-semibold tracking-tight text-white"
           >
             {portfolio.name}

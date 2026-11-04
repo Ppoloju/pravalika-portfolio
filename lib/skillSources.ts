@@ -37,7 +37,9 @@ export function getSkillSources(skillName: string): SkillSource[] {
         type: "experience",
         id: exp.id,
         title: exp.role,
-        subtitle: `${exp.company} · ${exp.duration}`,
+        subtitle: exp.duration
+          ? `${exp.company} · ${exp.duration}`
+          : exp.company,
         description: exp.responsibilities[0],
       });
     }
