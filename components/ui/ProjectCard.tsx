@@ -107,6 +107,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
               Live Demo
             </OutlineButton>
           )}
+          {project.documentUrl && (
+            <OutlineButton
+              href={project.documentUrl}
+              external
+              className="!px-3 !py-1.5 sm:!px-4 sm:!py-2 text-[10px] sm:text-xs"
+            >
+              <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              MLH Participation
+            </OutlineButton>
+          )}
         </div>
       </div>
     </GlowCard>

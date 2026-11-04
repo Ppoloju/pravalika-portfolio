@@ -9,6 +9,7 @@ export interface Project {
   status: ProjectStatus;
   githubUrl?: string;
   liveUrl?: string;
+  documentUrl?: string;
   image?: string;
   featured?: boolean;
 }

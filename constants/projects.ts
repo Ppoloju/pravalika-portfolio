@@ -8,7 +8,7 @@ export const projects: Project[] = [
     id: "money-tracker",
     title: "Money Tracker",
     description:
-      "Built during a three-hour hackathon, this React app tracks expenses, monthly budgets, and spending patterns. It includes category charts, search and date filters, and saves data in the browser rather than a shared backend.",
+      "Built during a three-hour hackathon, this React app helps manage expenses, monthly budgets, and saving habits.",
     context: "GITAM · 3-hour hackathon",
     techStack: ["React", "Vite", "Tailwind CSS", "Recharts"],
     status: "Completed",
@@ -42,8 +42,8 @@ export const projects: Project[] = [
     id: "gatherly",
     title: "Gatherly",
     description:
-      "A team project with Vaishnavi and Satvika centered on planning and coordinating shared gatherings.",
-    context: "Team project · Vaishnavi & Satvika",
+      "A team project centered on planning and coordinating shared gatherings.",
+    context: "Team project",
     techStack: [],
     status: "In Progress",
     featured: true,
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     title: "Jarvis — Desktop Assistant",
     description:
       "An AI-powered desktop assistant with voice interaction, laptop automation, and productivity features.",
-    context: "Desktop assistant · Shaurya",
+    context: "Desktop assistant",
     techStack: ["Python"],
     status: "In Progress",
     githubUrl: github("jarvis-ai-desktop-assistant"),
@@ -127,8 +127,8 @@ export const projects: Project[] = [
     id: "n8n-whatsapp",
     title: "n8n WhatsApp",
     description:
-      "A collaborative project with Vaishnavi and Satvika exploring WhatsApp workflow integrations using n8n.",
-    context: "Team project · Vaishnavi & Satvika",
+      "A collaborative project exploring WhatsApp workflow integrations using n8n.",
+    context: "Team project",
     techStack: ["n8n"],
     status: "In Progress",
     featured: true,
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     title: "ResQNET — iQOO Hackathon",
     description:
       "An offline-first emergency mesh network with Normal, Emergency, and Disaster modes. It relays SOS messages device to device and supports on-device AI detection and encrypted communication when internet or cellular service is unavailable.",
-    context: "Offline emergency mode · 05/2026 — 07/26 · Team project with Vaishnavi & Satvika",
+    context: "Offline emergency mode · 05/2026 — 07/26 · Team project",
     techStack: ["React", "TypeScript", "Express", "SQLite"],
     status: "Completed",
     githubUrl: github("ResQNET"),
@@ -213,7 +213,7 @@ export const projects: Project[] = [
     title: "HomeDoc",
     description:
       "An AI-assisted personal health organizer for medical documents, records, medications, measurements, and doctor-visit summaries. Extracted information is reviewed by the user before it becomes part of a health record; the app is informational and does not diagnose or prescribe.",
-    context: "Team project · Vaishnavi & Satvika",
+    context: "Team project",
     techStack: ["JavaScript"],
     status: "In Progress",
     githubUrl: "https://github.com/inturi-vaishnavi/HomeDoc",
@@ -224,10 +224,11 @@ export const projects: Project[] = [
     title: "Explain It Sideways",
     description:
       "An AI learning tool that makes complex concepts easier to understand through everyday analogies, meme-style explanations, visual diagrams, and structured exam answers, with adjustable learning depth.",
-    context: "Hacktoberfest · WorkWild",
+    context: "MLH Hack Day · Hacktoberfest 2026",
     techStack: ["React", "Vite", "Express", "Mermaid", "Gemma 4"],
     status: "Completed",
     githubUrl: github("explain-it-sideways"),
+    documentUrl: "/certificates/mlh hackathon participation.png",
     featured: true,
   },
 ];
