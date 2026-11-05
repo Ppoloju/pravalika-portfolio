@@ -27,13 +27,14 @@ export function SocialButton({
   className,
 }: SocialButtonProps) {
   const Icon = iconMap[icon];
+  const isExternal = icon !== "mail" && icon !== "file-text";
 
   return (
     <motion.a
       href={href}
-      target={icon === "mail" || icon === "file-text" ? undefined : "_blank"}
-      rel={icon === "mail" || icon === "file-text" ? undefined : "noopener noreferrer"}
-      aria-label={label}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      aria-label={isExternal ? `${label} (opens in a new tab)` : label}
       whileHover={{ scale: 1.08, y: -2 }}
       whileTap={{ scale: 0.95 }}
       className={cn(
@@ -44,7 +45,8 @@ export function SocialButton({
         className
       )}
     >
-      <Icon className="h-5 w-5" />
+      <Icon className="h-5 w-5" aria-hidden="true" />
+      {isExternal && <span className="sr-only">Opens in a new tab</span>}
     </motion.a>
   );
 }
