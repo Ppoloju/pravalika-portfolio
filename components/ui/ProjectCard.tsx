@@ -86,14 +86,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <OutlineButton
               href={project.githubUrl}
               external
+              ariaLabel={`Open GitHub repository for ${project.title} in a new tab`}
               className="!px-4 !py-2 text-xs"
             >
-              <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               GitHub
             </OutlineButton>
           ) : (
             <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl border border-dashed border-white/15 px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs text-gray-500">
-              <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               GitHub — Coming Soon
             </span>
           )}
@@ -101,9 +102,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <OutlineButton
               href={project.liveUrl}
               external
+              ariaLabel={`Open live demo for ${project.title} in a new tab`}
               className="!px-3 !py-1.5 sm:!px-4 sm:!py-2 text-[10px] sm:text-xs"
             >
-              <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               Live Demo
             </OutlineButton>
           )}
@@ -111,9 +113,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <OutlineButton
               href={project.documentUrl}
               external
+              ariaLabel={`Open MLH participation document for ${project.title} in a new tab`}
               className="!px-3 !py-1.5 sm:!px-4 sm:!py-2 text-[10px] sm:text-xs"
             >
-              <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               MLH Participation
             </OutlineButton>
           )}

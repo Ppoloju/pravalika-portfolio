@@ -11,6 +11,7 @@ interface OutlineButtonProps {
   className?: string;
   type?: "button" | "submit";
   external?: boolean;
+  ariaLabel?: string;
 }
 
 export function OutlineButton({
@@ -20,6 +21,7 @@ export function OutlineButton({
   className,
   type = "button",
   external,
+  ariaLabel,
 }: OutlineButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3",
@@ -36,9 +38,11 @@ export function OutlineButton({
         <Link
           href={href}
           className={classes}
+          aria-label={ariaLabel}
           {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         >
           {children}
+          {external && <span className="sr-only"> (opens in a new tab)</span>}
         </Link>
       </motion.div>
     );
@@ -51,6 +55,7 @@ export function OutlineButton({
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       className={classes}
+      aria-label={ariaLabel}
     >
       {children}
     </motion.button>

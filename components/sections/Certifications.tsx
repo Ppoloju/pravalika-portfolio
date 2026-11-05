@@ -97,10 +97,12 @@ export function Certifications() {
                           href={cert.link}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`View certificate for ${cert.name} (opens in a new tab)`}
                           className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-medium text-purple-400 hover:text-purple-300 transition-colors group"
                         >
-                          <ExternalLink className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform group-hover:translate-x-0.5" />
+                          <ExternalLink className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                           View Certificate
+                          <span className="sr-only">opens in a new tab</span>
                         </a>
                       )}
                     </div>
