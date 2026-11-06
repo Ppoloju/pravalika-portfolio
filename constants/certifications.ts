@@ -1,5 +1,7 @@
 import type { CertificationItem } from "@/types/certification";
 
+const certificateUrl = (fileName: string) => `/certificates/${encodeURIComponent(fileName)}`;
+
 export const certifications: CertificationItem[] = [
   {
     id: "1",
@@ -8,7 +10,7 @@ export const certifications: CertificationItem[] = [
     description: "Intensive cybersecurity training program covering security assessment, penetration testing fundamentals, and hands-on experience with Hack The Box and TryHackMe platforms.",
     date: "Jul 2026",
     status: "Completed",
-    link: "/certificates/Hackops Certification.jpeg",
+    link: certificateUrl("Hackops Certification.jpeg"),
   },
   {
     id: "2",
@@ -17,7 +19,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate of participation recognizing contributions to GirlScript Summer of Code 2026 and its open-source projects.",
     date: "2026",
     status: "Completed",
-    link: "/certificates/GSSoC-2026-Certificate.pdf",
+    link: certificateUrl("GSSoC-2026-Certificate.pdf"),
   },
   {
     id: "3",
@@ -42,7 +44,7 @@ export const certifications: CertificationItem[] = [
     description: "Published research paper titled 'The Explainable AI Paradox: When Transparency Improves Decision Quality And When It Creates Overconfidence' in Volume 12, Issue 3, May-June 2026.",
     date: "Jun 2026",
     status: "Completed",
-    link: "/certificates/research.jpeg",
+    link: certificateUrl("research.jpeg"),
   },
   {
     id: "6",
@@ -51,7 +53,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate earned through the internship experience, highlighting practical exposure and professional growth in the field.",
     date: "2026",
     status: "Completed",
-    link: "/certificates/2501 CCPL Internship Certificate Pravalika Poloju.pdf",
+    link: certificateUrl("2501 CCPL Internship Certificate Pravalika Poloju.pdf"),
   },
   {
     id: "7",
@@ -60,7 +62,7 @@ export const certifications: CertificationItem[] = [
     description: "Foundational certificate covering Python programming fundamentals and problem-solving basics.",
     date: "May 2025",
     status: "Completed",
-    link: "/certificates/Python Basics.pdf",
+    link: certificateUrl("Python Basics.pdf"),
   },
   {
     id: "8",
@@ -69,7 +71,7 @@ export const certifications: CertificationItem[] = [
     description: "Introductory certificate focused on Python syntax, functions, and basic programming concepts.",
     date: "Sep 2024",
     status: "Completed",
-    link: "/certificates/Crash Course on Python.pdf",
+    link: certificateUrl("Crash Course on Python.pdf"),
   },
   {
     id: "9",
@@ -78,7 +80,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate covering the fundamentals of React, components, and modern frontend development.",
     date: "Jul 2025",
     status: "Completed",
-    link: "/certificates/React Basics.pdf",
+    link: certificateUrl("React Basics.pdf"),
   },
   {
     id: "10",
@@ -87,7 +89,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate covering core IT support concepts, troubleshooting, and customer support best practices.",
     date: "May 2024",
     status: "Completed",
-    link: "/certificates/Technical Support Fundamentals.pdf",
+    link: certificateUrl("Technical Support Fundamentals.pdf"),
   },
   {
     id: "11",
@@ -96,7 +98,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate highlighting networking fundamentals, protocols, and practical IT infrastructure knowledge.",
     date: "Nov 2024",
     status: "Completed",
-    link: "/certificates/The Bits and Bytes of Computer Networking.pdf",
+    link: certificateUrl("The Bits and Bytes of Computer Networking.pdf"),
   },
   {
     id: "12",
@@ -105,7 +107,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate focused on system administration, infrastructure management, and operational support.",
     date: "Nov 2024",
     status: "Completed",
-    link: "/certificates/System Administration and IT Infrastructure.pdf",
+    link: certificateUrl("System Administration and IT Infrastructure.pdf"),
   },
   {
     id: "13",
@@ -114,7 +116,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate covering cybersecurity basics, threat awareness, and defensive practices.",
     date: "Nov 2024",
     status: "Completed",
-    link: "/certificates/IT Security Defense against the digital dark arts.pdf",
+    link: certificateUrl("IT Security Defense against the digital dark arts.pdf"),
   },
   {
     id: "14",
@@ -123,7 +125,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate covering the essentials of cybersecurity concepts and security mindset.",
     date: "Jan 2025",
     status: "Completed",
-    link: "/certificates/Foundations of Cybersecurity.pdf",
+    link: certificateUrl("Foundations of Cybersecurity.pdf"),
   },
   {
     id: "15",
@@ -132,7 +134,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate focused on operating systems, user productivity, and everyday system usage.",
     date: "Nov 2024",
     status: "Completed",
-    link: "/certificates/Operating Systems and You Becoming a Power User.pdf",
+    link: certificateUrl("Operating Systems and You Becoming a Power User.pdf"),
   },
   {
     id: "16",
@@ -141,7 +143,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate covering computer fundamentals and essential office productivity tools.",
     date: "Aug 2024",
     status: "Completed",
-    link: "/certificates/Introduction to Computers and Office Productivity Software.pdf",
+    link: certificateUrl("Introduction to Computers and Office Productivity Software.pdf"),
   },
   {
     id: "17",
@@ -150,7 +152,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate highlighting practical spreadsheet skills and daily Excel usage.",
     date: "Aug 2024",
     status: "Completed",
-    link: "/certificates/Everyday Excel, Part 1.pdf",
+    link: certificateUrl("Everyday Excel, Part 1.pdf"),
   },
   {
     id: "18",
@@ -159,7 +161,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate focused on writing effective professional emails and business communication.",
     date: "Aug 2024",
     status: "Completed",
-    link: "/certificates/Write Professional Emails in English.pdf",
+    link: certificateUrl("Write Professional Emails in English.pdf"),
   },
   {
     id: "19",
@@ -168,7 +170,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate covering presentation design, storytelling, and professional slide creation.",
     date: "Aug 2024",
     status: "Completed",
-    link: "/certificates/Create Informative Presentations with Google Slides.pdf",
+    link: certificateUrl("Create Informative Presentations with Google Slides.pdf"),
   },
   {
     id: "20",
@@ -177,7 +179,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate from the JPMorgan Quantitative Research job simulation, showcasing practical exposure to quantitative analysis and finance operations.",
     date: "2024",
     status: "Completed",
-    link: "/certificates/jpmorgan job simulation certificate.pdf",
+    link: certificateUrl("jpmorgan job simulation certificate.pdf"),
   },
   {
     id: "21",
@@ -186,7 +188,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate from the JPMorgan Software Engineering job simulation, highlighting practical experience in software development and engineering practices.",
     date: "2024",
     status: "Completed",
-    link: "/certificates/jpmorgan sjob simulation certificate.pdf",
+    link: certificateUrl("jpmorgan sjob simulation certificate.pdf"),
   },
   {
     id: "22",
@@ -195,7 +197,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate from the Tata job simulation experience, highlighting participation in a practical business scenario.",
     date: "2024",
     status: "Completed",
-    link: "/certificates/tata job simulation certificate.pdf",
+    link: certificateUrl("tata job simulation certificate.pdf"),
   },
   {
     id: "23",
@@ -204,7 +206,7 @@ export const certifications: CertificationItem[] = [
     description: "Certificate for completing the Networking Basics course through Cisco Networking Academy.",
     date: "Oct 2026",
     status: "Completed",
-    link: "/certificates/networkingbasics.pdf",
+    link: certificateUrl("networkingbasics.pdf"),
   },
   {
     id: "24",
@@ -213,6 +215,6 @@ export const certifications: CertificationItem[] = [
     description: "Certificate for completing the Exploring Networking with Cisco Packet Tracer course.",
     date: "Oct 2026",
     status: "Completed",
-    link: "/certificates/ciscopackets.pdf",
+    link: certificateUrl("ciscopackets.pdf"),
   },
 ];
