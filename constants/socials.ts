@@ -1,5 +1,7 @@
 export type SocialIconName = "github" | "linkedin" | "mail" | "file-text" | "users";
 
+const resumeUrl = `/resume/${encodeURIComponent("Poloju Pravalika Resume .pdf")}`;
+
 export const socialLinks: {
   label: string;
   href: string;
@@ -22,7 +24,7 @@ export const socialLinks: {
   },
   {
     label: "Resume",
-    href: "/resume/Poloju Pravalika Resume .pdf",
+    href: resumeUrl,
     icon: "file-text",
   },
   {
