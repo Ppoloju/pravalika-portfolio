@@ -228,7 +228,7 @@ export const projects: Project[] = [
     techStack: ["React", "Vite", "Express", "Mermaid", "Gemma 4"],
     status: "Completed",
     githubUrl: github("explain-it-sideways"),
-    documentUrl: "/certificates/mlh hackathon participation.png",
+    documentUrl: `/certificates/${encodeURIComponent("mlh hackathon participation.png")}`,
     featured: true,
   },
 ];
