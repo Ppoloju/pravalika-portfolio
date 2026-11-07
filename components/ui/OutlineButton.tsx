@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useId } from "react";
 import { cn } from "@/lib/utils";
 
 interface OutlineButtonProps {
@@ -23,6 +24,7 @@ export function OutlineButton({
   external,
   ariaLabel,
 }: OutlineButtonProps) {
+  const newTabDescriptionId = useId();
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3",
     "text-sm font-semibold text-white",
@@ -39,10 +41,15 @@ export function OutlineButton({
           href={href}
           className={classes}
           aria-label={ariaLabel}
+          aria-describedby={external ? newTabDescriptionId : undefined}
           {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         >
           {children}
-          {external && <span className="sr-only"> (opens in a new tab)</span>}
+          {external && (
+            <span id={newTabDescriptionId} className="sr-only">
+              Opens in a new tab
+            </span>
+          )}
         </Link>
       </motion.div>
     );

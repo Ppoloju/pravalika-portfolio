@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useId } from "react";
 import { cn } from "@/lib/utils";
 
 interface GradientButtonProps {
@@ -23,6 +24,7 @@ export function GradientButton({
   external = false,
   ariaLabel,
 }: GradientButtonProps) {
+  const newTabDescriptionId = useId();
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3",
     "text-sm font-semibold text-white",
@@ -40,11 +42,16 @@ export function GradientButton({
           href={href}
           className={classes}
           aria-label={ariaLabel}
+          aria-describedby={external ? newTabDescriptionId : undefined}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
         >
           {children}
-          {external && <span className="sr-only"> (opens in a new tab)</span>}
+          {external && (
+            <span id={newTabDescriptionId} className="sr-only">
+              Opens in a new tab
+            </span>
+          )}
         </Link>
       </motion.div>
     );
