@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useId } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlowCard } from "@/components/ui/GlowCard";
@@ -10,6 +11,7 @@ import { ExternalLink, Clock, Award } from "lucide-react";
 import type { CertificationItem } from "@/types/certification";
 
 export function Certifications() {
+  const newTabDescriptionId = useId();
   const certificationOrder: Record<string, number> = {
     "HackOps Bootcamp": 0,
     "GSSOC '26": 1,
@@ -97,12 +99,18 @@ export function Certifications() {
                           href={cert.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`View certificate for ${cert.name} (opens in a new tab)`}
+                          aria-label={`View certificate for ${cert.name}`}
+                          aria-describedby={`${newTabDescriptionId}-certificate-${cert.id}`}
                           className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-medium text-purple-400 hover:text-purple-300 transition-colors group"
                         >
                           <ExternalLink className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                           View Certificate
-                          <span className="sr-only">opens in a new tab</span>
+                          <span
+                            id={`${newTabDescriptionId}-certificate-${cert.id}`}
+                            className="sr-only"
+                          >
+                            Opens in a new tab
+                          </span>
                         </a>
                       )}
                     </div>
