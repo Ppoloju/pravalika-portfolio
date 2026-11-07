@@ -86,7 +86,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <OutlineButton
               href={project.githubUrl}
               external
-              ariaLabel={`Open GitHub repository for ${project.title} in a new tab`}
+              ariaLabel={`Open GitHub repository for ${project.title}`}
               className="!px-4 !py-2 text-xs"
             >
               <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
@@ -102,7 +102,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <OutlineButton
               href={project.liveUrl}
               external
-              ariaLabel={`Open live demo for ${project.title} in a new tab`}
+              ariaLabel={`Open live demo for ${project.title}`}
               className="!px-3 !py-1.5 sm:!px-4 sm:!py-2 text-[10px] sm:text-xs"
             >
               <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
@@ -113,7 +113,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <OutlineButton
               href={project.documentUrl}
               external
-              ariaLabel={`Open MLH participation document for ${project.title} in a new tab`}
+              ariaLabel={`Open MLH participation document for ${project.title}`}
               className="!px-3 !py-1.5 sm:!px-4 sm:!py-2 text-[10px] sm:text-xs"
             >
               <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />

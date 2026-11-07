@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { MapPin, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
@@ -9,6 +10,8 @@ import { experiences } from "@/constants/experience";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
 export function Experience() {
+  const newTabDescriptionId = useId();
+
   return (
     <section id="experience" className="py-16 sm:py-20 md:py-32">
       <Container>
@@ -95,12 +98,18 @@ export function Experience() {
                         href={exp.certificateLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`View certificate for ${exp.company} ${exp.role} (opens in a new tab)`}
+                        aria-label={`View certificate for ${exp.company} ${exp.role}`}
+                        aria-describedby={`${newTabDescriptionId}-experience-${exp.id}`}
                         className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors group"
                       >
                         <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                         View Certificate
-                        <span className="sr-only">opens in a new tab</span>
+                        <span
+                          id={`${newTabDescriptionId}-experience-${exp.id}`}
+                          className="sr-only"
+                        >
+                          Opens in a new tab
+                        </span>
                       </a>
                     </div>
                   )}
