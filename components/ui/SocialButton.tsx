@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useId } from "react";
 import { Github, Linkedin, Mail, FileText, Users, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { SocialIconName } from "@/constants/socials";
@@ -28,13 +29,15 @@ export function SocialButton({
 }: SocialButtonProps) {
   const Icon = iconMap[icon];
   const isExternal = icon !== "mail" && icon !== "file-text";
+  const newTabDescriptionId = useId();
 
   return (
     <motion.a
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      aria-label={isExternal ? `${label} (opens in a new tab)` : label}
+      aria-label={label}
+      aria-describedby={isExternal ? newTabDescriptionId : undefined}
       whileHover={{ scale: 1.08, y: -2 }}
       whileTap={{ scale: 0.95 }}
       className={cn(
@@ -46,7 +49,11 @@ export function SocialButton({
       )}
     >
       <Icon className="h-5 w-5" aria-hidden="true" />
-      {isExternal && <span className="sr-only">Opens in a new tab</span>}
+      {isExternal && (
+        <span id={newTabDescriptionId} className="sr-only">
+          Opens in a new tab
+        </span>
+      )}
     </motion.a>
   );
 }
