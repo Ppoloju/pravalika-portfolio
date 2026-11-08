@@ -20,7 +20,7 @@ export function GlowCard({
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
       className={cn(
         "group relative rounded-3xl border border-white/10 bg-slate-950/60 shadow-xl shadow-black/10 backdrop-blur-xl",
-        "p-6 md:p-8 transition-all duration-300",
+        "p-4 sm:p-6 md:p-8 transition-all duration-300",
         hover && "hover:border-purple-400/30 hover:shadow-2xl hover:shadow-purple-950/30",
         className
       )}

@@ -35,7 +35,7 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-gradient-to-b from-transparent via-gray-950/50 to-transparent relative overflow-hidden">
+    <section id="skills" className="relative overflow-hidden bg-gradient-to-b from-transparent via-gray-950/50 to-transparent py-16 sm:py-20 md:py-32 lg:py-40">
       {/* Enhanced background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -98,7 +98,7 @@ export function Skills() {
             const Icon = categoryIcons[category];
             return (
               <motion.div key={category} variants={staggerItem}>
-                <GlowCard hover={true} className="h-full p-4 sm:p-5 md:p-7 transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_50px_-12px_rgba(168,85,247,0.25)] backdrop-blur-sm bg-white/[0.02]">
+                <GlowCard hover={true} className="h-full p-4 sm:p-5 md:p-7 transition-all duration-500 hover:shadow-[0_0_50px_-12px_rgba(168,85,247,0.25)] backdrop-blur-sm bg-white/[0.02] md:hover:scale-[1.02]">
                   <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                     <motion.div
                       whileHover={{ rotate: 360, scale: 1.1 }}

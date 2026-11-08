@@ -55,16 +55,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-4 sm:p-5 md:p-6 lg:p-8">
+      <div className="flex min-w-0 flex-1 flex-col p-4 sm:p-5 md:p-6 lg:p-8">
         {project.context && (
           <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-gray-500 sm:text-[11px]">
             {project.context}
           </p>
         )}
-        <h3 className="text-lg font-semibold leading-snug text-white sm:text-xl">
+        <h3 className="break-words text-lg font-semibold leading-snug text-white sm:text-xl">
           {project.title}
         </h3>
-        <p className="mt-2 sm:mt-3 flex-1 text-sm sm:text-base text-gray-400 leading-relaxed">
+        <p className="mt-2 flex-1 break-words text-sm leading-relaxed text-gray-400 sm:mt-3 sm:text-base">
           {project.description}
         </p>
 
@@ -81,7 +81,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
 
-        <div className="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
+        <div className="mt-4 flex flex-wrap gap-2 sm:mt-6 sm:gap-3">
           {project.githubUrl ? (
             <OutlineButton
               href={project.githubUrl}
