@@ -39,9 +39,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <button
                 onClick={onClose}
                 aria-label="Close menu"
-                className="rounded-lg p-1.5 sm:p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-white/10 hover:text-white"
               >
-                <X className="h-4 w-4 sm:h-5 sm:w-5" />
+                <X className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
 
@@ -51,7 +51,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <Link
                     href={link.href}
                     onClick={onClose}
-                    className="text-base sm:text-lg font-medium text-gray-300 transition-colors hover:text-white"
+                    className="flex min-h-12 items-center text-base font-medium text-gray-300 transition-colors hover:text-white sm:text-lg"
                   >
                     {link.label}
                   </Link>

@@ -46,7 +46,7 @@ export function Navbar() {
         >
           <Link
             href="/"
-            className="text-base sm:text-lg font-semibold tracking-tight text-white"
+            className="inline-flex min-h-12 items-center text-base font-semibold tracking-tight text-white sm:text-lg"
           >
             {portfolio.name}
             <span className="text-purple-400">.</span>
@@ -73,9 +73,9 @@ export function Navbar() {
           <button
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
-            className="rounded-lg p-2 sm:p-2.5 text-gray-400 transition-colors hover:bg-white/10 hover:text-white md:hidden"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-white/10 hover:text-white md:hidden"
           >
-            <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+            <Menu className="h-6 w-6" aria-hidden="true" />
           </button>
         </nav>
       </motion.header>
