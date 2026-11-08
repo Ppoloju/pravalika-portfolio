@@ -63,16 +63,16 @@ export function Certifications() {
             <motion.div key={cert.id} variants={staggerItem}>
               <GlowCard hover={true} className="h-full">
                 <div className="flex flex-col gap-4">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-start gap-2 sm:gap-3 flex-1">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div className="flex min-w-0 flex-1 items-start gap-2 sm:gap-3">
                       <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-purple-500/30">
                         <Award className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-base sm:text-lg font-semibold text-white leading-tight">
+                      <div className="min-w-0 flex-1">
+                        <h3 className="break-words text-base font-semibold leading-tight text-white sm:text-lg">
                           {cert.name}
                         </h3>
-                        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-purple-400">
+                        <p className="mt-0.5 break-words text-xs text-purple-400 sm:mt-1 sm:text-sm">
                           {cert.issuer}
                         </p>
                       </div>
@@ -85,12 +85,12 @@ export function Certifications() {
                     )}
                   </div>
 
-                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  <p className="break-words text-xs leading-relaxed text-gray-400 sm:text-sm">
                     {cert.description}
                   </p>
 
                   <div className="mt-auto pt-3 sm:pt-4 border-t border-white/10">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="text-[10px] sm:text-xs text-gray-500">
                         {cert.date}
                       </span>
@@ -101,7 +101,7 @@ export function Certifications() {
                           rel="noopener noreferrer"
                           aria-label={`View certificate for ${cert.name}`}
                           aria-describedby={`${newTabDescriptionId}-certificate-${cert.id}`}
-                          className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-medium text-purple-400 hover:text-purple-300 transition-colors group"
+                          className="inline-flex min-h-12 items-center gap-1 text-[10px] font-medium text-purple-400 transition-colors hover:text-purple-300 group sm:gap-1.5 sm:text-xs"
                         >
                           <ExternalLink className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                           View Certificate

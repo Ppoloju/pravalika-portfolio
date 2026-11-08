@@ -42,7 +42,7 @@ export function Hero() {
             {portfolio.education}
           </motion.p>
 
-          <h1 className="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl xl:text-7xl">
+          <h1 className="max-w-3xl text-[clamp(2.25rem,10vw,3rem)] font-semibold leading-[1.08] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl xl:text-7xl">
             <AnimatedText
               text={portfolio.tagline}
               className="gap-x-[0.25em]"
@@ -74,7 +74,7 @@ export function Hero() {
             <a
               href="#about"
               aria-label="Scroll to about section"
-              className="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-gray-300"
+              className="inline-flex min-h-12 items-center gap-2 text-sm text-gray-500 transition-colors hover:text-gray-300"
             >
               <span className="uppercase tracking-[0.15em]">Scroll to explore</span>
               <motion.div

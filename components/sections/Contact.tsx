@@ -55,7 +55,7 @@ export function Contact() {
               <p className="mt-1.5 sm:mt-2 text-sm sm:text-base text-gray-400">
                 <a
                   href={`mailto:${portfolio.email}`}
-                  className="text-purple-400 transition-colors hover:text-purple-300"
+                  className="inline-flex min-h-12 max-w-full items-center break-all text-purple-400 transition-colors hover:text-purple-300"
                 >
                   {portfolio.email}
                 </a>
@@ -98,7 +98,7 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState((s) => ({ ...s, name: e.target.value }))
                     }
-                    className="w-full rounded-lg sm:rounded-xl border border-white/10 bg-white/[0.04] px-3 sm:px-4 py-2.5 sm:py-3 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+                    className="min-h-12 w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 sm:rounded-xl sm:px-4 sm:py-3"
                     placeholder="Your name"
                   />
                 </div>
@@ -117,7 +117,7 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState((s) => ({ ...s, email: e.target.value }))
                     }
-                    className="w-full rounded-lg sm:rounded-xl border border-white/10 bg-white/[0.04] px-3 sm:px-4 py-2.5 sm:py-3 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+                    className="min-h-12 w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 sm:rounded-xl sm:px-4 sm:py-3"
                     placeholder="you@email.com"
                   />
                 </div>
@@ -136,7 +136,7 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState((s) => ({ ...s, message: e.target.value }))
                     }
-                    className="w-full resize-none rounded-lg sm:rounded-xl border border-white/10 bg-white/[0.04] px-3 sm:px-4 py-2.5 sm:py-3 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30"
+                    className="min-h-24 w-full resize-y rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 sm:rounded-xl sm:px-4 sm:py-3"
                     placeholder="Tell me about your opportunity..."
                   />
                 </div>

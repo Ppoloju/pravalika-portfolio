@@ -50,11 +50,11 @@ export function Experience() {
 
                 <GlowCard hover={index === 0}>
                   <div className="flex flex-col gap-2 sm:gap-3 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                    <div className="min-w-0">
+                      <h3 className="break-words text-xl font-semibold text-white sm:text-2xl">
                         {exp.role}
                       </h3>
-                      <p className="mt-0.5 sm:mt-1 text-sm sm:text-base text-purple-400">{exp.company}</p>
+                      <p className="mt-0.5 break-words text-sm text-purple-400 sm:mt-1 sm:text-base">{exp.company}</p>
                       {exp.location && (
                         <p className="mt-1 sm:mt-2 flex items-center gap-1.5 text-xs sm:text-sm text-gray-500">
                           <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" aria-hidden />
@@ -73,7 +73,7 @@ export function Experience() {
                     {exp.responsibilities.map((item) => (
                       <li
                         key={item}
-                        className="flex gap-2 sm:gap-3 text-sm sm:text-base text-gray-400 leading-relaxed"
+                        className="flex gap-2 break-words text-sm leading-relaxed text-gray-400 sm:gap-3 sm:text-base"
                       >
                         <span className="mt-1.5 sm:mt-2 h-1 w-1 shrink-0 rounded-full bg-cyan-400" />
                         {item}
@@ -100,7 +100,7 @@ export function Experience() {
                         rel="noopener noreferrer"
                         aria-label={`View certificate for ${exp.company} ${exp.role}`}
                         aria-describedby={`${newTabDescriptionId}-experience-${exp.id}`}
-                        className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors group"
+                        className="inline-flex min-h-12 items-center gap-1.5 font-medium text-purple-400 transition-colors hover:text-purple-300 group sm:gap-2 sm:text-sm"
                       >
                         <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                         View Certificate
