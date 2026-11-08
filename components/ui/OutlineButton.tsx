@@ -26,7 +26,7 @@ export function OutlineButton({
 }: OutlineButtonProps) {
   const newTabDescriptionId = useId();
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3",
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3",
     "text-sm font-semibold text-white",
     "border border-white/20 bg-white/[0.03] backdrop-blur-sm",
     "transition-all duration-300",

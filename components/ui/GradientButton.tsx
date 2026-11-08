@@ -26,7 +26,7 @@ export function GradientButton({
 }: GradientButtonProps) {
   const newTabDescriptionId = useId();
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3",
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3",
     "text-sm font-semibold text-white",
     "bg-gradient-to-r from-purple-600 to-cyan-500",
     "shadow-lg shadow-purple-500/20",

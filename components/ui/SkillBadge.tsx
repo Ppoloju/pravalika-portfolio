@@ -46,7 +46,7 @@ export function SkillBadge({ name, category, className, onClick, isActive }: Ski
       whileHover={hasSources ? { scale: 1.05, y: -2 } : {}}
       whileTap={hasSources ? { scale: 0.98 } : {}}
       className={cn(
-        "inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium",
+        "inline-flex min-h-12 items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium",
         "transition-all duration-300",
         hasSources ? "cursor-pointer" : "cursor-default opacity-70",
         isActive
