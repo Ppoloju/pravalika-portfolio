@@ -71,7 +71,7 @@ pravalika-portfolio/
 
 ### Prerequisites
 
-- Node.js 18 or newer
+- Node.js 20.9.0 or newer
 - npm or yarn
 
 ### Installation
