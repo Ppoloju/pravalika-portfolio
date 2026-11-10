@@ -56,7 +56,7 @@ pravalika-portfolio/
 │   └── resume/            # Resume PDF
 ├── styles/                 # Additional CSS support
 ├── types/                  # TypeScript interfaces and definitions
-├── .eslintrc*              # ESLint config
+├── eslint.config.mjs       # ESLint flat config
 ├── LICENSE                 # Project license
 ├── next.config.ts          # Next.js config
 ├── package.json            # Scripts and dependencies
