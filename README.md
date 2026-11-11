@@ -51,9 +51,8 @@ pravalika-portfolio/
 │   └── portfolio.ts        # Core personal profile data
 ├── lib/                    # Utility functions and animation helpers
 ├── public/
-│   ├── certificates/      # Certification assets
-│   ├── projects/          # Project-related media
-│   └── resume/            # Resume PDF
+│   ├── certificates/       # Certification assets
+│   └── resume/             # Resume PDF
 ├── styles/                 # Additional CSS support
 ├── types/                  # TypeScript interfaces and definitions
 ├── eslint.config.mjs       # ESLint flat config
