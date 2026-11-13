@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, type RefObject } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { X } from "lucide-react";
@@ -8,11 +9,28 @@ import { portfolio } from "@/data/portfolio";
 import { GradientButton } from "@/components/ui/GradientButton";
 
 interface MobileMenuProps {
+  id: string;
   isOpen: boolean;
   onClose: () => void;
+  triggerRef: RefObject<HTMLButtonElement | null>;
 }
 
-export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+export function MobileMenu({
+  id,
+  isOpen,
+  onClose,
+  triggerRef,
+}: MobileMenuProps) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const trigger = triggerRef.current;
+    closeButtonRef.current?.focus();
+    return () => trigger?.focus();
+  }, [isOpen, triggerRef]);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -27,6 +45,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
           />
           <motion.nav
+            id={id}
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -39,6 +58,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 {portfolio.name}
               </span>
               <button
+                ref={closeButtonRef}
+                type="button"
                 onClick={onClose}
                 aria-label="Close menu"
                 className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-white/10 hover:text-white"
