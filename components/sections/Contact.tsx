@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
+import { Copy, Send } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlowCard } from "@/components/ui/GlowCard";
@@ -18,6 +18,21 @@ export function Contact() {
     email: "",
     message: "",
   });
+  const [copyStatus, setCopyStatus] = useState("");
+
+  const handleCopyEmail = async () => {
+    if (!navigator.clipboard?.writeText) {
+      setCopyStatus("Clipboard access is unavailable. Use the email link above.");
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(portfolio.email);
+      setCopyStatus("Email address copied.");
+    } catch {
+      setCopyStatus("Could not copy automatically. Use the email link above.");
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,6 +75,21 @@ export function Contact() {
                   {portfolio.email}
                 </a>
               </p>
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="mt-2 inline-flex min-h-12 items-center gap-2 rounded-lg text-sm text-cyan-300 transition-colors hover:text-cyan-200"
+              >
+                <Copy className="h-4 w-4" aria-hidden="true" />
+                Copy email address
+              </button>
+              <p
+                className="min-h-5 text-xs text-gray-400"
+                role="status"
+                aria-live="polite"
+              >
+                {copyStatus}
+              </p>
 
               <div className="mt-6 sm:mt-8 flex gap-2 sm:gap-3">
                 {socialLinks.map((social) => (
@@ -82,6 +112,10 @@ export function Contact() {
             transition={{ ...defaultTransition, delay: 0.15 }}
           >
             <GlowCard hover={false}>
+              <p className="mb-4 text-sm leading-relaxed text-gray-400">
+                Sending this form opens your default email app. If it doesn&apos;t
+                open, use the email link or copy button beside it.
+              </p>
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-5">
                 <div>
                   <label
@@ -93,6 +127,7 @@ export function Contact() {
                   <input
                     id="name"
                     type="text"
+                    autoComplete="name"
                     required
                     value={formState.name}
                     onChange={(e) =>
@@ -112,6 +147,7 @@ export function Contact() {
                   <input
                     id="email"
                     type="email"
+                    autoComplete="email"
                     required
                     value={formState.email}
                     onChange={(e) =>

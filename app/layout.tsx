@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { MotionConfig } from "framer-motion";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -24,6 +25,18 @@ export const metadata: Metadata = {
     "TypeScript",
     "portfolio",
   ],
+  openGraph: {
+    title: "Pravalika | Full Stack Developer",
+    description:
+      "Full-stack developer portfolio — building modern web experiences with React, Next.js, and scalable backend systems.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Pravalika | Full Stack Developer",
+    description:
+      "Full-stack developer portfolio — building modern web experiences with React, Next.js, and scalable backend systems.",
+  },
 };
 
 export default function RootLayout({
@@ -34,10 +47,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
+      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth motion-reduce:scroll-auto`}
     >
       <body className="min-h-screen text-white antialiased" suppressHydrationWarning>
-        {children}
+        <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </body>
     </html>
   );

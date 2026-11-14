@@ -28,8 +28,19 @@ export function MobileMenu({
 
     const trigger = triggerRef.current;
     closeButtonRef.current?.focus();
-    return () => trigger?.focus();
-  }, [isOpen, triggerRef]);
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      trigger?.focus();
+    };
+  }, [isOpen, onClose, triggerRef]);
 
   return (
     <AnimatePresence>

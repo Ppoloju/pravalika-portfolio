@@ -11,5 +11,5 @@ export interface Project {
   liveUrl?: string;
   documentUrl?: string;
   image?: string;
-  featured?: boolean;
+  featured: boolean;
 }

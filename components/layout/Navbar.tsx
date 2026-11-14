@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
@@ -15,6 +15,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileMenuId = "mobile-navigation-menu";
+  const closeMobileMenu = useCallback(() => setMobileOpen(false), []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -89,7 +90,7 @@ export function Navbar() {
       <MobileMenu
         id={mobileMenuId}
         isOpen={mobileOpen}
-        onClose={() => setMobileOpen(false)}
+        onClose={closeMobileMenu}
         triggerRef={menuButtonRef}
       />
     </>

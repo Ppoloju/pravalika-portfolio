@@ -98,7 +98,7 @@ export function SkillSourcesModal({
               type="button"
               onClick={onClose}
               aria-label={`Close ${skillName} sources`}
-              className="absolute right-4 top-4 rounded-xl p-2.5 text-gray-400 transition-all duration-200 hover:scale-110 hover:bg-white/10 hover:text-white"
+              className="absolute right-4 top-4 inline-flex h-12 w-12 items-center justify-center rounded-xl text-gray-400 transition-all duration-200 hover:scale-110 hover:bg-white/10 hover:text-white"
             >
               <X className="h-5 w-5" aria-hidden />
             </button>
@@ -189,7 +189,7 @@ export function SkillSourcesModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="text-sm text-gray-400 transition-colors hover:text-white"
+                className="inline-flex min-h-12 items-center justify-center px-4 text-sm text-gray-400 transition-colors hover:text-white"
               >
                 Close
               </button>

@@ -25,7 +25,7 @@ export const projects: Project[] = [
     techStack: ["C"],
     status: "Completed",
     githubUrl: github("online-voting-system"),
-    featured: true,
+    featured: false,
   },
   {
     id: "movie-recommendation",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     techStack: ["Python"],
     status: "Completed",
     githubUrl: github("movie-recommendation-system"),
-    featured: true,
+    featured: false,
   },
   {
     id: "gatherly",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     context: "Team project",
     techStack: [],
     status: "In Progress",
-    featured: true,
+    featured: false,
   },
   {
     id: "jarvis",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     techStack: ["Python"],
     status: "In Progress",
     githubUrl: github("jarvis-ai-desktop-assistant"),
-    featured: true,
+    featured: false,
   },
   {
     id: "training-portal",
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
     status: "In Progress",
     githubUrl: github("pravalika-portfolio"),
-    featured: true,
+    featured: false,
   },
   {
     id: "currency-exchange",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     context: "AI project",
     techStack: [],
     status: "In Progress",
-    featured: true,
+    featured: false,
   },
   {
     id: "linkedin-messaging",
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     techStack: ["JavaScript", "n8n", "Playwright"],
     status: "Completed",
     githubUrl: github("linkedin-message-automation"),
-    featured: true,
+    featured: false,
   },
   {
     id: "linkedin-network-catchup",
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     techStack: ["JavaScript", "n8n", "Playwright"],
     status: "Completed",
     githubUrl: github("linkedin-network-catchup"),
-    featured: true,
+    featured: false,
   },
   {
     id: "n8n-outlook",
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     context: "Internship project · Chidhagni",
     techStack: ["n8n"],
     status: "In Progress",
-    featured: true,
+    featured: false,
   },
   {
     id: "n8n-whatsapp",
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     context: "Team project",
     techStack: ["n8n"],
     status: "In Progress",
-    featured: true,
+    featured: false,
   },
   {
     id: "student-management",
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     context: "Internship project · Chidhagni",
     techStack: [],
     status: "In Progress",
-    featured: true,
+    featured: false,
   },
   {
     id: "ai-study-agent",
@@ -206,7 +206,7 @@ export const projects: Project[] = [
     techStack: ["Python", "Ollama", "Gemma 3n"],
     status: "In Progress",
     githubUrl: github("grassgate"),
-    featured: true,
+    featured: false,
   },
   {
     id: "homedoc",
@@ -217,7 +217,7 @@ export const projects: Project[] = [
     techStack: ["JavaScript"],
     status: "In Progress",
     githubUrl: "https://github.com/inturi-vaishnavi/HomeDoc",
-    featured: true,
+    featured: false,
   },
   {
     id: "explain-it-sideways",

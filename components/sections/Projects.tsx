@@ -2,6 +2,7 @@
 
 import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectCard } from "@/components/ui/ProjectCard";
@@ -10,6 +11,9 @@ import { projects } from "@/constants/projects";
 import { staggerContainer, staggerItem, fadeUp } from "@/lib/animations";
 
 export function Projects() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const featuredProjects = projects.filter((project) => project.featured);
+  const visibleProjects = showAllProjects ? projects : featuredProjects;
   const completedCount = projects.filter(
     (project) => project.status === "Completed"
   ).length;
@@ -21,7 +25,7 @@ export function Projects() {
         <SectionHeading
           label="Projects"
           title="A little of what I’ve built"
-          description="A growing collection of coursework, hackathon builds, internship work, research, and collaborations."
+          description="Selected coursework, hackathon builds, internship work, research, and collaborations."
         />
 
         <div className="mb-8 grid grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/[0.08] bg-white/[0.025] px-2 py-4 sm:mb-10 sm:px-6 sm:py-5">
@@ -46,14 +50,31 @@ export function Projects() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
+          id="project-list"
           className="grid gap-4 sm:gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
-          {projects.map((project) => (
+          {visibleProjects.map((project) => (
             <motion.div key={project.id} variants={staggerItem}>
               <ProjectCard project={project} />
             </motion.div>
           ))}
         </motion.div>
+
+        {featuredProjects.length < projects.length && (
+          <div className="mt-6 flex justify-center sm:mt-8">
+            <button
+              type="button"
+              aria-controls="project-list"
+              aria-expanded={showAllProjects}
+              onClick={() => setShowAllProjects((showAll) => !showAll)}
+              className="min-h-12 rounded-xl border border-white/15 px-5 text-sm font-medium text-gray-200 transition-colors hover:border-purple-400/50 hover:bg-white/[0.04]"
+            >
+              {showAllProjects
+                ? "Show featured projects"
+                : `Browse all ${projects.length} projects`}
+            </button>
+          </div>
+        )}
 
         <motion.div
           initial="hidden"

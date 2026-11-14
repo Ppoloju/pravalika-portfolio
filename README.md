@@ -50,6 +50,7 @@ pravalika-portfolio/
 ├── data/
 │   └── portfolio.ts        # Core personal profile data
 ├── lib/                    # Utility functions and animation helpers
+├── scripts/                # Local asset validation
 ├── public/
 │   ├── certificates/       # Certification assets
 │   └── resume/             # Resume PDF
@@ -63,7 +64,6 @@ pravalika-portfolio/
 ├── tailwind.config.ts      # Tailwind config
 ├── tsconfig.json           # TypeScript config
 ├── README.md               # Project documentation
-└── eslint.config.mjs       # ESLint flat config
 ```
 
 ## Getting Started
@@ -117,6 +117,11 @@ You can update portfolio content by editing these files:
 - `constants/experience.ts` — work experience details
 - `constants/certifications.ts` — certificate data and metadata
 - `constants/socials.ts` — social media/profile links
+- `scripts/check-assets.mjs` — check that referenced resume and certificate assets exist
+
+Review current project statuses, experience dates, and descriptions whenever portfolio
+content changes. Add authentic project screenshots under `public/` before setting a
+project's `image` field; avoid using placeholder graphics as project evidence.
 
 You can also add resume files and certificate PDFs under `public/resume/` and `public/certificates/`.
 
