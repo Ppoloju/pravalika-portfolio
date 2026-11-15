@@ -1,149 +1,112 @@
-# Pravalika Poloju | Portfolio
+<div align="center">
 
-A modern personal portfolio website built with Next.js to showcase experience, skills, projects, certifications, and career highlights for recruiters and collaborators.
+# Pravalika Poloju
 
-## Overview
+### Full-Stack Developer · AI & ML · Open Source
 
-This portfolio is designed as a clean, responsive, and professional landing page for a Computer Science student and developer. It highlights:
+Building practical web and AI-powered projects with a focus on thoughtful user experiences.
 
-- full-stack development work
-- AI and machine learning interests
-- project experience and technical skills
-- internship and learning journey
-- certifications and achievements
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-149eca?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06b6d4?logo=tailwindcss)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-a855f7.svg)](LICENSE)
 
-The site uses a polished dark-mode aesthetic with animated sections, soft gradients, and structured content blocks.
+[Explore projects](#selected-projects) · [About](#about) · [Get in touch](#contact)
 
-## Featured Sections
+</div>
 
-- Hero introduction and personal branding
-- About section with academic and career journey
-- Skills showcase
-- Project portfolio cards
-- Work experience timeline
-- Certifications gallery
-- Contact section with social links
+---
 
-## Tech Stack
+## About
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Lucide React
-- React Icons
+I’m a Computer Science Engineering student specializing in AI & ML at GITAM Hyderabad. I enjoy building full-stack applications, workflow automations, and AI-assisted tools, and contributing to collaborative projects.
 
-## Project Structure
+This portfolio brings together my projects, technical skills, experience, and certifications in a responsive Next.js site.
 
-```bash
-pravalika-portfolio/
-├── app/                     # App router pages and global styles
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-├── components/
-│   ├── layout/             # Navbar, Footer, MobileMenu
-│   ├── sections/           # Hero, About, Skills, Projects, Experience, Certifications, Contact
-│   └── ui/                 # Reusable card, button, badge, and animation components
-├── constants/              # Static portfolio data (projects, skills, experience, social links, certifications)
-├── data/
-│   └── portfolio.ts        # Core personal profile data
-├── lib/                    # Utility functions and animation helpers
-├── scripts/                # Local asset validation
-├── public/
-│   ├── certificates/       # Certification assets
-│   └── resume/             # Resume PDF
-├── styles/                 # Additional CSS support
-├── types/                  # TypeScript interfaces and definitions
-├── eslint.config.mjs       # ESLint flat config
-├── LICENSE                 # Project license
-├── next.config.ts          # Next.js config
-├── package.json            # Scripts and dependencies
-├── postcss.config.mjs      # PostCSS config
-├── tailwind.config.ts      # Tailwind config
-├── tsconfig.json           # TypeScript config
-├── README.md               # Project documentation
-```
+## Selected Projects
 
-## Getting Started
+| Project | What it does | Stack |
+| --- | --- | --- |
+| [Money Tracker](https://github.com/Ppoloju/Expense-Tracker) · [Live demo](https://3hr-expense-tracker.netlify.app) | Tracks expenses, budgets, and savings goals. | React, Vite, Tailwind CSS, Recharts |
+| [AI Study Agent](https://github.com/Ppoloju/ai-agent-hackathon) | Creates study plans and practice quizzes from a syllabus. | Python, Streamlit, Gemini, Firebase |
+| [Signal Labs](https://github.com/Ppoloju/AI-Attention-Layer-for-Alert-Management) | Groups operational events into prioritized, explainable signals. | Next.js, TypeScript, PostgreSQL, Redis |
+| [SIF Precursor Detection](https://github.com/Ppoloju/SIH-SIF-Precursor-Detection) | Analyzes synthetic safety-report data to support HSE review. | Python, FastAPI, React, PostgreSQL |
+| [ResQNET](https://github.com/Ppoloju/ResQNET) | Explores offline-first emergency messaging between devices. | React, TypeScript, Express, SQLite |
 
-### Prerequisites
+More projects are available in the [portfolio project list](constants/projects.ts).
 
-- Node.js 20.9.0 or newer
-- npm or yarn
+## Built With
 
-### Installation
+- **Framework:** Next.js 16 and React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Animation:** Framer Motion
+- **Icons:** Lucide React and React Icons
 
-1. Clone the repository:
+## Run Locally
+
+### Requirements
+
+- Node.js 20.9 or newer
+- npm
+
+### Setup
 
 ```bash
 git clone https://github.com/Ppoloju/pravalika-portfolio.git
 cd pravalika-portfolio
-```
-
-2. Install dependencies:
-
-```bash
 npm install
-```
-
-3. Start the development server:
-
-```bash
 npm run dev
 ```
 
-4. Open your browser at:
+Visit [http://localhost:3000](http://localhost:3000).
 
-```text
-http://localhost:3000
-```
-
-### Production Build
+### Checks
 
 ```bash
+npm run lint
 npm run build
-npm start
+npm run check:assets
 ```
 
-## Customization
+`check:assets` verifies that the resume and certificate files referenced by the portfolio data exist under `public/`.
 
-You can update portfolio content by editing these files:
+## Repository Guide
 
-- `data/portfolio.ts` — core profile details, headline, about text, and contact info
-- `constants/projects.ts` — project list and descriptions
-- `constants/skills.ts` — technology stack and categories
-- `constants/experience.ts` — work experience details
-- `constants/certifications.ts` — certificate data and metadata
-- `constants/socials.ts` — social media/profile links
-- `scripts/check-assets.mjs` — check that referenced resume and certificate assets exist
+```text
+app/                 App Router pages, global styles, and metadata
+components/layout/   Site navigation and layout
+components/sections/ Portfolio sections
+components/ui/       Reusable interface components
+constants/           Project, skill, experience, and certification data
+data/                Personal profile data
+lib/                 Shared helpers and animation settings
+public/              Resume and certificate assets
+scripts/             Local asset validation
+styles/              Additional stylesheets
+types/               TypeScript data types
+```
 
-Review current project statuses, experience dates, and descriptions whenever portfolio
-content changes. Add authentic project screenshots under `public/` before setting a
-project's `image` field; avoid using placeholder graphics as project evidence.
+## Customize
 
-You can also add resume files and certificate PDFs under `public/resume/` and `public/certificates/`.
+Portfolio content is maintained in the files below:
 
-## Deployment
+- `data/portfolio.ts` — name, role, bio, contact details, and resume path
+- `constants/projects.ts` — project descriptions, links, stacks, and featured status
+- `constants/skills.ts` — skill names and categories
+- `constants/experience.ts` — experience and participation details
+- `constants/certifications.ts` — certification details and asset links
+- `constants/socials.ts` — social profile links
 
-This project is optimized for deployment with Vercel.
-
-Typical workflow:
-
-1. Push the repository to GitHub
-2. Import it into Vercel
-3. Configure the framework as Next.js
-4. Deploy
-
-It can also be deployed to any host that supports Next.js applications.
+Keep dates and project statuses current, and use authentic screenshots when adding project images.
 
 ## Contact
 
-- Name: Pravalika Poloju
-- Email: ppoloju@student.gitam.edu
-- GitHub: [@Ppoloju](https://github.com/Ppoloju)
+- **Email:** [ppoloju@student.gitam.edu](mailto:ppoloju@student.gitam.edu)
+- **GitHub:** [@Ppoloju](https://github.com/Ppoloju)
+- **Location:** Hyderabad, India
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is distributed under the MIT License. See [LICENSE](LICENSE).
