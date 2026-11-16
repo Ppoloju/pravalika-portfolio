@@ -9,6 +9,7 @@ import { portfolio } from "@/data/portfolio";
 import { GradientButton } from "@/components/ui/GradientButton";
 import { MobileMenu } from "./MobileMenu";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,7 +45,7 @@ export function Navbar() {
         )}
       >
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-[#0b0d14]/80 px-4 py-3 shadow-xl shadow-black/20 backdrop-blur-xl sm:px-6 sm:py-3.5"
+          className="theme-surface mx-auto flex max-w-7xl items-center justify-between rounded-2xl border px-4 py-3 shadow-xl shadow-black/10 backdrop-blur-xl sm:px-6 sm:py-3.5"
           aria-label="Main navigation"
         >
           <Link
@@ -69,21 +70,23 @@ export function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden md:block">
-            <GradientButton href={portfolio.resumePath} external>Resume</GradientButton>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="hidden md:block">
+              <GradientButton href={portfolio.resumePath} external>Resume</GradientButton>
+            </div>
+            <ThemeToggle />
+            <button
+              ref={menuButtonRef}
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={mobileOpen}
+              aria-controls={mobileMenuId}
+              className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-white/10 hover:text-white md:hidden"
+            >
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            </button>
           </div>
-
-          <button
-            ref={menuButtonRef}
-            type="button"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open menu"
-            aria-expanded={mobileOpen}
-            aria-controls={mobileMenuId}
-            className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-white/10 hover:text-white md:hidden"
-          >
-            <Menu className="h-6 w-6" aria-hidden="true" />
-          </button>
         </nav>
       </motion.header>
 
