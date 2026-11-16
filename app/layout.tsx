@@ -47,9 +47,24 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="light"
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth motion-reduce:scroll-auto`}
     >
-      <body className="min-h-screen text-white antialiased" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try {
+  var savedTheme = localStorage.getItem("portfolio-theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    document.documentElement.dataset.theme = savedTheme;
+  }
+} catch (error) {
+  console.warn("Could not load the saved color theme.", error);
+}`,
+          }}
+        />
+      </head>
+      <body className="min-h-screen antialiased">
         <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </body>
     </html>
