@@ -21,7 +21,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <GlowCard className="flex h-full flex-col overflow-hidden p-0">
-      <div className="relative aspect-[1.7] w-full overflow-hidden bg-gradient-to-br from-[#171429] via-[#0c111b] to-[#0b2025]">
+      <div className="theme-band relative aspect-[1.7] w-full overflow-hidden">
         {project.image ? (
           <Image
             src={project.image}
@@ -31,8 +31,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
         ) : (
           <div className="relative flex h-full items-center justify-center overflow-hidden">
-            <div className="absolute -left-10 -top-20 h-48 w-48 rounded-full bg-purple-500/15 blur-3xl" />
-            <div className="absolute -bottom-24 -right-10 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl" />
             <span className="absolute bottom-4 left-4 font-mono text-[10px] tracking-[0.2em] text-white/40">
               SELECTED WORK
             </span>
