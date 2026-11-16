@@ -27,10 +27,10 @@ export function OutlineButton({
   const newTabDescriptionId = useId();
   const classes = cn(
     "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3",
-    "text-sm font-semibold text-white",
-    "border border-white/20 bg-white/[0.03] backdrop-blur-sm",
+    "text-sm font-semibold text-[var(--foreground)]",
+    "border border-[var(--border)] bg-[var(--tint)] backdrop-blur-sm",
     "transition-all duration-300",
-    "hover:border-white/40 hover:bg-white/10",
+    "hover:bg-[var(--surface)]",
     className
   );
 

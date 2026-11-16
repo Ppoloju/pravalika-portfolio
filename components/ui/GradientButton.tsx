@@ -27,11 +27,11 @@ export function GradientButton({
   const newTabDescriptionId = useId();
   const classes = cn(
     "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3",
-    "text-sm font-semibold text-white",
-    "bg-gradient-to-r from-purple-600 to-cyan-500",
-    "shadow-lg shadow-purple-500/20",
+    "text-sm font-semibold text-[var(--background)]",
+    "bg-[var(--accent)] text-[var(--background)]",
+    "shadow-md shadow-black/10",
     "transition-all duration-300",
-    "hover:shadow-purple-500/40 hover:brightness-110",
+    "hover:brightness-95",
     className
   );
 
