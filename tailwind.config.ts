@@ -8,11 +8,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#030303",
-        foreground: "#fafafa",
-        muted: "#9ca3af",
-        "purple-accent": "#a855f7",
-        "cyan-accent": "#06b6d4",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        muted: "var(--muted)",
+        accent: "var(--accent)",
+        button: "var(--button)",
+        "button-foreground": "var(--button-foreground)",
+        surface: "var(--surface)",
+        "surface-strong": "var(--surface-strong)",
+        tint: "var(--tint)",
+        "border-theme": "var(--border)",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],

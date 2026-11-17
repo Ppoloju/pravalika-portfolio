@@ -7,12 +7,17 @@
   --foreground: #102b4e;
   --muted: #52657c;
   --accent: #173c66;
+  --button: #173c66;
+  --button-foreground: #fffdf7;
   --surface: rgba(255, 253, 247, 0.88);
   --surface-strong: #fffdf7;
   --border: rgba(16, 43, 78, 0.2);
-  --line: rgba(16, 43, 78, 0.12);
   --tint: rgba(16, 43, 78, 0.055);
   --overlay: rgba(16, 43, 78, 0.42);
+  --success: #285d3b;
+  --success-surface: #e8f2eb;
+  --warning: #73591d;
+  --warning-surface: #f6efdb;
 }
 
 html[data-theme="dark"] {
@@ -21,20 +26,34 @@ html[data-theme="dark"] {
   --foreground: #f5f0e4;
   --muted: #d0c8b7;
   --accent: #f5f0e4;
+  --button: #f5f0e4;
+  --button-foreground: #102b4e;
   --surface: rgba(21, 52, 88, 0.9);
   --surface-strong: #153458;
   --border: rgba(245, 240, 228, 0.28);
-  --line: rgba(245, 240, 228, 0.16);
   --tint: rgba(245, 240, 228, 0.08);
   --overlay: rgba(5, 18, 35, 0.68);
+  --success: #b6d8bd;
+  --success-surface: rgba(67, 122, 79, 0.24);
+  --warning: #ead39a;
+  --warning-surface: rgba(126, 96, 35, 0.28);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-  --color-purple-accent: var(--accent);
-  --color-cyan-accent: var(--accent);
+  --color-accent: var(--accent);
+  --color-button: var(--button);
+  --color-button-foreground: var(--button-foreground);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-tint: var(--tint);
+  --color-border-theme: var(--border);
+  --color-success: var(--success);
+  --color-success-surface: var(--success-surface);
+  --color-warning: var(--warning);
+  --color-warning-surface: var(--warning-surface);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -47,11 +66,6 @@ html {
 body {
   min-height: 100vh;
   background-color: var(--background);
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 56px 56px;
-  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -75,41 +89,6 @@ body {
 
 .theme-overlay {
   background-color: var(--overlay);
-}
-
-[class*="text-white"],
-[class*="text-gray-"] {
-  color: var(--foreground) !important;
-}
-
-[class*="text-gray-400"],
-[class*="text-gray-500"],
-[class*="text-gray-600"] {
-  color: var(--muted) !important;
-}
-
-[class*="text-purple-"],
-[class*="text-cyan-"] {
-  color: var(--accent) !important;
-}
-
-[class*="border-white"],
-[class*="border-purple-"],
-[class*="border-cyan-"] {
-  border-color: var(--border) !important;
-}
-
-[class*="bg-white/"],
-[class*="bg-purple-"],
-[class*="bg-cyan-"],
-[class*="bg-slate-950"],
-[class*="bg-gray-9"] {
-  background-color: var(--tint) !important;
-}
-
-[class*="bg-gradient-to"] {
-  background-image: none !important;
-  background-color: var(--tint) !important;
 }
 
 ::selection {
