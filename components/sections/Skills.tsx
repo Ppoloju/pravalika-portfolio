@@ -35,7 +35,7 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="theme-band relative overflow-hidden py-16 sm:py-20 md:py-32 lg:py-40">
+    <section id="skills" className="relative overflow-hidden py-16 sm:py-20 md:py-32 lg:py-40">
       <Container className="relative z-10">
         <SectionHeading
           label="Skills"
@@ -59,14 +59,10 @@ export function Skills() {
               <motion.div key={category} variants={staggerItem}>
                 <GlowCard hover={true} className="h-full p-4 sm:p-5 md:p-7">
                   <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                    <motion.div
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                      className="rounded-lg sm:rounded-xl p-2 sm:p-2.5 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/20"
-                    >
-                      <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-cyan-400" />
-                    </motion.div>
-                    <h3 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-cyan-400">
+                    <div className="rounded-lg border border-border-theme bg-tint p-2 sm:rounded-xl sm:p-2.5">
+                      <Icon className="h-4 w-4 text-accent sm:h-5 sm:w-5" />
+                    </div>
+                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-accent sm:text-sm sm:tracking-[0.25em]">
                       {category}
                     </h3>
                   </div>

@@ -50,10 +50,10 @@ export function Navbar() {
         >
           <Link
             href="/"
-            className="inline-flex min-h-12 items-center text-base font-semibold tracking-tight text-white sm:text-lg"
+            className="inline-flex min-h-12 items-center text-base font-semibold tracking-tight text-foreground sm:text-lg"
           >
             {portfolio.name}
-            <span className="text-purple-400">.</span>
+            <span className="text-accent">.</span>
           </Link>
 
           <ul className="hidden items-center gap-6 sm:gap-8 md:flex">
@@ -61,10 +61,10 @@ export function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="group relative text-xs sm:text-sm font-medium text-gray-400 transition-colors hover:text-cyan-200"
+                  className="group relative text-xs font-medium text-muted transition-colors hover:text-accent sm:text-sm"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-purple-400 to-cyan-300 transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
             ))}
@@ -82,7 +82,7 @@ export function Navbar() {
               aria-label="Open menu"
               aria-expanded={mobileOpen}
               aria-controls={mobileMenuId}
-              className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-white/10 hover:text-white md:hidden"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-border-theme bg-tint text-muted transition-colors hover:bg-surface hover:text-foreground md:hidden"
             >
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>

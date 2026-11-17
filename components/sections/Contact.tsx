@@ -61,16 +61,16 @@ export function Contact() {
             transition={defaultTransition}
           >
             <GlowCard hover={false} className="h-full">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
+              <h3 className="text-lg font-semibold text-foreground sm:text-xl md:text-2xl">
                 Connect With Me
               </h3>
-              <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-400 leading-relaxed">
+              <p className="mt-2 text-sm leading-relaxed text-muted sm:mt-3 sm:text-base">
                 {portfolio.location}
               </p>
-              <p className="mt-1.5 sm:mt-2 text-sm sm:text-base text-gray-400">
+              <p className="mt-1.5 text-sm text-muted sm:mt-2 sm:text-base">
                 <a
                   href={`mailto:${portfolio.email}`}
-                  className="inline-flex min-h-12 max-w-full items-center break-all text-purple-400 transition-colors hover:text-purple-300"
+                  className="inline-flex min-h-12 max-w-full items-center break-all text-accent transition-colors hover:underline"
                 >
                   {portfolio.email}
                 </a>
@@ -78,20 +78,20 @@ export function Contact() {
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="mt-2 inline-flex min-h-12 items-center gap-2 rounded-lg text-sm text-cyan-300 transition-colors hover:text-cyan-200"
+                className="mt-2 inline-flex min-h-12 items-center gap-2 rounded-xl border border-border-theme bg-tint px-3 text-sm text-foreground transition-colors hover:bg-surface"
               >
                 <Copy className="h-4 w-4" aria-hidden="true" />
                 Copy email address
               </button>
               <p
-                className="min-h-5 text-xs text-gray-400"
+                className="min-h-5 text-xs text-muted"
                 role="status"
                 aria-live="polite"
               >
                 {copyStatus}
               </p>
 
-              <div className="mt-6 sm:mt-8 flex gap-2 sm:gap-3">
+              <div className="mt-6 flex flex-wrap gap-2 sm:mt-8 sm:gap-3">
                 {socialLinks.map((social) => (
                   <SocialButton
                     key={social.label}
@@ -112,7 +112,7 @@ export function Contact() {
             transition={{ ...defaultTransition, delay: 0.15 }}
           >
             <GlowCard hover={false}>
-              <p className="mb-4 text-sm leading-relaxed text-gray-400">
+              <p className="mb-4 text-sm leading-relaxed text-muted">
                 Sending this form opens your default email app. If it doesn&apos;t
                 open, use the email link or copy button beside it.
               </p>
@@ -120,7 +120,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="mb-1.5 sm:mb-2 block text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-gray-500"
+                    className="mb-1.5 block text-xs uppercase tracking-[0.15em] text-muted sm:mb-2 sm:text-sm sm:tracking-[0.2em]"
                   >
                     Name
                   </label>
@@ -133,14 +133,14 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState((s) => ({ ...s, name: e.target.value }))
                     }
-                    className="min-h-12 w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 sm:rounded-xl sm:px-4 sm:py-3"
+                    className="min-h-12 w-full rounded-xl border border-border-theme bg-surface-strong px-3 py-2.5 text-foreground placeholder:text-muted outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20 sm:px-4 sm:py-3"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="mb-1.5 sm:mb-2 block text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-gray-500"
+                    className="mb-1.5 block text-xs uppercase tracking-[0.15em] text-muted sm:mb-2 sm:text-sm sm:tracking-[0.2em]"
                   >
                     Email
                   </label>
@@ -153,14 +153,14 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState((s) => ({ ...s, email: e.target.value }))
                     }
-                    className="min-h-12 w-full rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 sm:rounded-xl sm:px-4 sm:py-3"
+                    className="min-h-12 w-full rounded-xl border border-border-theme bg-surface-strong px-3 py-2.5 text-foreground placeholder:text-muted outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20 sm:px-4 sm:py-3"
                     placeholder="you@email.com"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="mb-1.5 sm:mb-2 block text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-gray-500"
+                    className="mb-1.5 block text-xs uppercase tracking-[0.15em] text-muted sm:mb-2 sm:text-sm sm:tracking-[0.2em]"
                   >
                     Message
                   </label>
@@ -172,7 +172,7 @@ export function Contact() {
                     onChange={(e) =>
                       setFormState((s) => ({ ...s, message: e.target.value }))
                     }
-                    className="min-h-24 w-full resize-y rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-white placeholder:text-gray-600 outline-none transition-colors focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 sm:rounded-xl sm:px-4 sm:py-3"
+                    className="min-h-32 w-full resize-y rounded-xl border border-border-theme bg-surface-strong px-3 py-2.5 text-foreground placeholder:text-muted outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20 sm:px-4 sm:py-3"
                     placeholder="Tell me about your opportunity..."
                   />
                 </div>

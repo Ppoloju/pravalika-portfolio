@@ -28,21 +28,21 @@ export function Hero() {
           <motion.p
             variants={fadeUp}
             transition={defaultTransition}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-purple-400/20 bg-purple-400/[0.07] px-3.5 py-2 text-[11px] font-medium uppercase tracking-[0.15em] text-purple-200 sm:text-xs"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-border-theme bg-tint px-3.5 py-2 text-[11px] font-medium uppercase tracking-[0.15em] text-accent sm:text-xs"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {portfolio.role}
           </motion.p>
 
           <motion.p
             variants={fadeUp}
             transition={{ ...defaultTransition, delay: 0.1 }}
-            className="mb-4 text-sm text-gray-400 sm:mb-5 sm:text-base"
+            className="mb-4 text-sm text-muted sm:mb-5 sm:text-base"
           >
             {portfolio.education}
           </motion.p>
 
-          <h1 className="max-w-3xl text-[clamp(2.25rem,10vw,3rem)] font-semibold leading-[1.08] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl xl:text-7xl">
+          <h1 className="max-w-3xl text-[clamp(2.25rem,8vw,3rem)] font-semibold leading-[1.08] tracking-[-0.045em] text-foreground sm:text-5xl md:text-6xl xl:text-7xl">
             <AnimatedText
               text={portfolio.tagline}
               className="gap-x-[0.25em]"
@@ -52,7 +52,7 @@ export function Hero() {
           <motion.p
             variants={fadeUp}
             transition={{ ...defaultTransition, delay: 0.3 }}
-            className="mt-6 max-w-2xl text-sm leading-7 text-gray-400 sm:text-base sm:leading-8"
+            className="mt-6 max-w-2xl text-sm leading-7 text-muted sm:text-base sm:leading-8"
           >
             {portfolio.headline}
           </motion.p>
@@ -74,7 +74,7 @@ export function Hero() {
             <a
               href="#about"
               aria-label="Scroll to about section"
-              className="inline-flex min-h-12 items-center gap-2 text-sm text-gray-500 transition-colors hover:text-gray-300"
+              className="inline-flex min-h-12 items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
             >
               <span className="uppercase tracking-[0.15em]">Scroll to explore</span>
               <motion.div
@@ -94,48 +94,47 @@ export function Hero() {
           className="relative mx-auto w-full max-w-xl lg:mx-0 lg:ml-auto"
           aria-label="Areas of focus"
         >
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-purple-500/15 via-transparent to-cyan-500/10 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0b0d14]/85 p-5 shadow-2xl shadow-black/30 backdrop-blur-xl sm:p-7">
+          <div className="theme-surface relative overflow-hidden rounded-2xl border p-5 shadow-sm sm:p-7">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-purple-300/20 bg-purple-400/10 text-purple-200">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border-theme bg-tint text-accent">
                   <Sparkles className="h-5 w-5" aria-hidden />
                 </div>
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-gray-500">
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">
                     A little about my work
                   </p>
-                  <p className="mt-1 text-base font-semibold text-white sm:text-lg">
+                  <p className="mt-1 text-base font-semibold text-foreground sm:text-lg">
                     Curious by nature. Builder by practice.
                   </p>
                 </div>
               </div>
-              <span className="hidden h-px flex-1 bg-gradient-to-r from-white/10 to-transparent sm:block" />
+              <span className="hidden h-px flex-1 bg-border-theme sm:block" />
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-3">
               {portfolio.about.focus.map((item, index) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-3.5 sm:p-4"
+                  className="rounded-xl border border-border-theme bg-tint p-3.5 sm:p-4"
                 >
-                  <span className="mb-3 block font-mono text-[10px] tracking-[0.18em] text-cyan-300/70">
+                  <span className="mb-3 block font-mono text-[10px] tracking-[0.18em] text-accent">
                     0{index + 1}
                   </span>
-                  <p className="text-sm font-medium leading-snug text-gray-200 sm:text-base">
+                  <p className="text-sm font-medium leading-snug text-foreground sm:text-base">
                     {item.title}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-5 flex flex-col gap-3 border-t border-white/[0.08] pt-5 text-xs text-gray-400 sm:flex-row sm:items-center sm:justify-between sm:text-sm">
+            <div className="mt-5 flex flex-col gap-3 border-t border-border-theme pt-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:text-sm">
               <span className="inline-flex items-center gap-2">
-                <GraduationCap className="h-4 w-4 shrink-0 text-purple-300" aria-hidden />
+                <GraduationCap className="h-4 w-4 shrink-0 text-accent" aria-hidden />
                 {portfolio.education}
               </span>
               <span className="inline-flex items-center gap-2">
-                <MapPin className="h-4 w-4 shrink-0 text-cyan-300" aria-hidden />
+                <MapPin className="h-4 w-4 shrink-0 text-accent" aria-hidden />
                 {portfolio.location.split(" · ")[0]}
               </span>
             </div>

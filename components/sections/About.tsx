@@ -17,7 +17,7 @@ export function About() {
           description={portfolio.about.intro}
         />
 
-        <p className="mx-auto mb-8 sm:mb-12 max-w-3xl text-center text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
+        <p className="mx-auto mb-8 max-w-3xl text-center text-sm leading-relaxed text-muted sm:mb-12 sm:text-base md:text-lg">
           {portfolio.about.journey}
         </p>
 
@@ -31,10 +31,10 @@ export function About() {
           {portfolio.about.focus.map((item) => (
             <motion.div key={item.title} variants={staggerItem}>
               <GlowCard>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
+                <h3 className="text-lg font-semibold text-foreground sm:text-xl md:text-2xl">
                   {item.title}
                 </h3>
-                <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-400 leading-relaxed">
+                <p className="mt-2 text-sm leading-relaxed text-muted sm:mt-3 sm:text-base">
                   {item.description}
                 </p>
               </GlowCard>

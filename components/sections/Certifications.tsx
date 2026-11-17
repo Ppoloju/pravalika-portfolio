@@ -65,33 +65,33 @@ export function Certifications() {
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="flex min-w-0 flex-1 items-start gap-2 sm:gap-3">
-                      <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-purple-500/30">
-                        <Award className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400" />
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-theme bg-tint sm:h-10 sm:w-10">
+                        <Award className="h-4 w-4 text-accent sm:h-5 sm:w-5" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <h3 className="break-words text-base font-semibold leading-tight text-white sm:text-lg">
+                        <h3 className="break-words text-base font-semibold leading-tight text-foreground sm:text-lg">
                           {cert.name}
                         </h3>
-                        <p className="mt-0.5 break-words text-xs text-purple-400 sm:mt-1 sm:text-sm">
+                        <p className="mt-0.5 break-words text-xs text-accent sm:mt-1 sm:text-sm">
                           {cert.issuer}
                         </p>
                       </div>
                     </div>
                     {cert.status === "In Progress" && (
-                      <span className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-medium text-cyan-400 bg-cyan-400/10 px-1.5 sm:px-2 py-0.75 sm:py-1 rounded-full border border-cyan-400/20">
+                      <span className="flex items-center gap-1 rounded-full border border-border-theme bg-tint px-1.5 py-0.75 text-[10px] font-medium text-accent sm:gap-1.5 sm:px-2 sm:py-1 sm:text-xs">
                         <Clock className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
                         In Progress
                       </span>
                     )}
                   </div>
 
-                  <p className="break-words text-xs leading-relaxed text-gray-400 sm:text-sm">
+                  <p className="break-words text-xs leading-relaxed text-muted sm:text-sm">
                     {cert.description}
                   </p>
 
-                  <div className="mt-auto pt-3 sm:pt-4 border-t border-white/10">
+                  <div className="mt-auto border-t border-border-theme pt-3 sm:pt-4">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-[10px] sm:text-xs text-gray-500">
+                      <span className="text-[10px] text-muted sm:text-xs">
                         {cert.date}
                       </span>
                       {cert.link && (
@@ -101,7 +101,7 @@ export function Certifications() {
                           rel="noopener noreferrer"
                           aria-label={`View certificate for ${cert.name}`}
                           aria-describedby={`${newTabDescriptionId}-certificate-${cert.id}`}
-                          className="inline-flex min-h-12 items-center gap-1 text-[10px] font-medium text-purple-400 transition-colors hover:text-purple-300 group sm:gap-1.5 sm:text-xs"
+                          className="group inline-flex min-h-12 items-center gap-1 text-[10px] font-medium text-accent transition-colors hover:underline sm:gap-1.5 sm:text-xs"
                         >
                           <ExternalLink className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                           View Certificate

@@ -61,11 +61,11 @@ export function MobileMenu({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="theme-surface-strong fixed right-0 top-0 z-50 flex h-full w-[min(100%,280px)] flex-col border-l p-5 backdrop-blur-xl sm:w-[min(100%,320px)] sm:p-6 md:hidden"
+            className="theme-surface-strong fixed right-0 top-0 z-50 flex h-full w-[min(100%,280px)] flex-col border-l p-5 sm:w-[min(100%,320px)] sm:p-6 md:hidden"
             aria-label="Mobile navigation"
           >
             <div className="flex items-center justify-between">
-              <span className="text-base sm:text-lg font-semibold text-white">
+              <span className="text-base font-semibold text-foreground sm:text-lg">
                 {portfolio.name}
               </span>
               <button
@@ -73,7 +73,7 @@ export function MobileMenu({
                 type="button"
                 onClick={onClose}
                 aria-label="Close menu"
-                className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-gray-400 transition-colors hover:bg-white/10 hover:text-white"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-border-theme bg-tint text-muted transition-colors hover:bg-surface hover:text-foreground"
               >
                 <X className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -85,7 +85,7 @@ export function MobileMenu({
                   <Link
                     href={link.href}
                     onClick={onClose}
-                    className="flex min-h-12 items-center text-base font-medium text-gray-300 transition-colors hover:text-white sm:text-lg"
+                    className="flex min-h-12 items-center text-base font-medium text-muted transition-colors hover:text-accent sm:text-lg"
                   >
                     {link.label}
                   </Link>

@@ -29,7 +29,7 @@ export function Experience() {
           className="relative mx-auto max-w-3xl"
         >
           <motion.div
-            className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-purple-500/60 via-cyan-500/40 to-transparent md:left-[11px]"
+            className="absolute bottom-2 left-[7px] top-2 w-px bg-border-theme md:left-[11px]"
             aria-hidden
           />
 
@@ -44,26 +44,25 @@ export function Experience() {
                   className="absolute left-0 top-5 sm:top-6 flex h-[16px] w-[16px] sm:h-[18px] sm:w-[18px] md:h-[22px] md:w-[22px] items-center justify-center"
                   aria-hidden
                 >
-                  <span className="absolute h-full w-full animate-pulse rounded-full bg-purple-500/30 blur-sm" />
-                  <span className="relative h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full border-2 border-purple-400 bg-[#030303] shadow-[0_0_12px_rgba(168,85,247,0.6)] md:h-3.5 md:w-3.5" />
+                  <span className="relative h-2.5 w-2.5 rounded-full border-2 border-accent bg-background sm:h-3 sm:w-3 md:h-3.5 md:w-3.5" />
                 </motion.div>
 
                 <GlowCard hover={index === 0}>
                   <div className="flex flex-col gap-2 sm:gap-3 sm:flex-row sm:items-start sm:justify-between">
                     <div className="min-w-0">
-                      <h3 className="break-words text-xl font-semibold text-white sm:text-2xl">
+                      <h3 className="break-words text-xl font-semibold text-foreground sm:text-2xl">
                         {exp.role}
                       </h3>
-                      <p className="mt-0.5 break-words text-sm text-purple-400 sm:mt-1 sm:text-base">{exp.company}</p>
+                      <p className="mt-0.5 break-words text-sm text-accent sm:mt-1 sm:text-base">{exp.company}</p>
                       {exp.location && (
-                        <p className="mt-1 sm:mt-2 flex items-center gap-1.5 text-xs sm:text-sm text-gray-500">
+                        <p className="mt-1 flex items-center gap-1.5 text-xs text-muted sm:mt-2 sm:text-sm">
                           <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" aria-hidden />
                           {exp.location}
                         </p>
                       )}
                     </div>
                     {exp.duration && (
-                      <span className="shrink-0 text-xs sm:text-sm text-gray-500">
+                      <span className="shrink-0 text-xs text-muted sm:text-sm">
                         {exp.duration}
                       </span>
                     )}
@@ -73,9 +72,9 @@ export function Experience() {
                     {exp.responsibilities.map((item) => (
                       <li
                         key={item}
-                        className="flex gap-2 break-words text-sm leading-relaxed text-gray-400 sm:gap-3 sm:text-base"
+                        className="flex gap-2 break-words text-sm leading-relaxed text-muted sm:gap-3 sm:text-base"
                       >
-                        <span className="mt-1.5 sm:mt-2 h-1 w-1 shrink-0 rounded-full bg-cyan-400" />
+                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent sm:mt-2" />
                         {item}
                       </li>
                     ))}
@@ -85,7 +84,7 @@ export function Experience() {
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.75 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-medium text-gray-400 transition-colors hover:border-purple-500/30 hover:text-gray-300"
+                        className="rounded-md border border-border-theme bg-tint px-2 py-0.75 text-[10px] font-medium text-muted transition-colors hover:bg-surface sm:px-2.5 sm:py-1 sm:text-xs"
                       >
                         {tech}
                       </span>
@@ -93,14 +92,14 @@ export function Experience() {
                   </div>
 
                   {exp.certificateLink && exp.certificateLink !== "#" && (
-                    <div className="mt-4 sm:mt-5 pt-4 sm:pt-5 border-t border-white/10">
+                    <div className="mt-4 border-t border-border-theme pt-4 sm:mt-5 sm:pt-5">
                       <a
                         href={exp.certificateLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`View certificate for ${exp.company} ${exp.role}`}
                         aria-describedby={`${newTabDescriptionId}-experience-${exp.id}`}
-                        className="inline-flex min-h-12 items-center gap-1.5 font-medium text-purple-400 transition-colors hover:text-purple-300 group sm:gap-2 sm:text-sm"
+                        className="group inline-flex min-h-12 items-center gap-1.5 font-medium text-accent transition-colors hover:underline sm:gap-2 sm:text-sm"
                       >
                         <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                         View Certificate

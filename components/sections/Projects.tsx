@@ -28,17 +28,17 @@ export function Projects() {
           description="Selected coursework, hackathon builds, internship work, research, and collaborations."
         />
 
-        <div className="mb-8 grid grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/[0.08] bg-white/[0.025] px-2 py-4 sm:mb-10 sm:px-6 sm:py-5">
+        <div className="theme-surface mb-8 grid grid-cols-3 divide-x divide-border-theme rounded-2xl border px-2 py-4 sm:mb-10 sm:px-6 sm:py-5">
           {[
             { label: "Projects", value: projects.length },
             { label: "Completed", value: completedCount },
             { label: "In Progress", value: inProgressCount },
           ].map((stat) => (
             <div key={stat.label} className="px-2 text-center sm:px-4">
-              <p className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
+              <p className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
                 {stat.value.toString().padStart(2, "0")}
               </p>
-              <p className="mt-1 text-[10px] text-gray-500 sm:text-xs">
+              <p className="mt-1 text-[10px] text-muted sm:text-xs">
                 {stat.label}
               </p>
             </div>
@@ -67,7 +67,7 @@ export function Projects() {
               aria-controls="project-list"
               aria-expanded={showAllProjects}
               onClick={() => setShowAllProjects((showAll) => !showAll)}
-              className="min-h-12 rounded-xl border border-white/15 px-5 text-sm font-medium text-gray-200 transition-colors hover:border-purple-400/50 hover:bg-white/[0.04]"
+              className="min-h-12 rounded-xl border border-border-theme bg-tint px-5 text-sm font-medium text-foreground transition-colors hover:bg-surface"
             >
               {showAllProjects
                 ? "Show featured projects"
@@ -83,16 +83,16 @@ export function Projects() {
           variants={fadeUp}
           className="mt-6 sm:mt-8 md:mt-10"
         >
-          <GlowCard hover={false} className="border-dashed border-purple-500/20">
+          <GlowCard hover={false} className="border-dashed">
             <div className="flex flex-col items-center gap-3 sm:gap-4 text-center sm:flex-row sm:text-left">
-              <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg sm:rounded-xl border border-purple-500/30 bg-purple-500/10">
-                <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 text-purple-400" aria-hidden />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border-theme bg-tint sm:h-12 sm:w-12 sm:rounded-xl">
+                <Sparkles className="h-5 w-5 text-accent sm:h-6 sm:w-6" aria-hidden />
               </div>
               <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
+                <h3 className="text-lg font-semibold text-foreground sm:text-xl md:text-2xl">
                   What’s next
                 </h3>
-                <p className="mt-2 text-sm sm:text-base text-gray-400 leading-relaxed">
+                <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">
                   {inProgressCount} projects are in progress across coursework,
                   internship work, research, and team collaborations. I&apos;m
                   looking forward to sharing updates as they take shape.
