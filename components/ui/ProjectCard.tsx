@@ -12,8 +12,8 @@ interface ProjectCardProps {
 }
 
 const statusStyles: Record<Project["status"], string> = {
-  Completed: "border-emerald-400/20 bg-emerald-400/10 text-emerald-200",
-  "In Progress": "border-amber-400/20 bg-amber-400/10 text-amber-200",
+  Completed: "border-success/30 bg-success-surface text-success",
+  "In Progress": "border-warning/30 bg-warning-surface text-warning",
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
@@ -31,17 +31,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
         ) : (
           <div className="relative flex h-full items-center justify-center overflow-hidden">
-            <span className="absolute bottom-4 left-4 font-mono text-[10px] tracking-[0.2em] text-white/40">
+            <span className="absolute bottom-4 left-4 font-mono text-[10px] tracking-[0.2em] text-muted">
               SELECTED WORK
             </span>
             <Code2
-              className="relative h-9 w-9 text-white/30"
+              className="relative h-9 w-9 text-muted"
               strokeWidth={1.25}
               aria-hidden
             />
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        {project.image && (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        )}
         <span
           className={cn(
             "absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-medium backdrop-blur-sm sm:right-4 sm:top-4 sm:text-xs",
@@ -55,14 +57,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       <div className="flex min-w-0 flex-1 flex-col p-4 sm:p-5 md:p-6 lg:p-8">
         {project.context && (
-          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-gray-500 sm:text-[11px]">
+          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.14em] text-muted sm:text-[11px]">
             {project.context}
           </p>
         )}
-        <h3 className="break-words text-lg font-semibold leading-snug text-white sm:text-xl">
+        <h3 className="break-words text-lg font-semibold leading-snug text-foreground sm:text-xl">
           {project.title}
         </h3>
-        <p className="mt-2 flex-1 break-words text-sm leading-relaxed text-gray-400 sm:mt-3 sm:text-base">
+        <p className="mt-2 flex-1 break-words text-sm leading-relaxed text-muted sm:mt-3 sm:text-base">
           {project.description}
         </p>
 
@@ -71,7 +73,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.techStack.map((tech) => (
               <span
                 key={tech}
-                className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.75 text-[10px] font-medium text-gray-400 sm:px-2.5 sm:py-1 sm:text-xs"
+                className="rounded-md border border-border-theme bg-tint px-2 py-0.75 text-[10px] font-medium text-muted sm:px-2.5 sm:py-1 sm:text-xs"
               >
                 {tech}
               </span>
@@ -91,7 +93,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               GitHub
             </OutlineButton>
           ) : (
-            <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl border border-dashed border-white/15 px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs text-gray-500">
+            <span className="inline-flex min-h-12 items-center gap-1.5 rounded-xl border border-dashed border-border-theme px-3 py-2 text-[10px] text-muted sm:gap-2 sm:px-4 sm:text-xs">
               <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               GitHub — Coming Soon
             </span>

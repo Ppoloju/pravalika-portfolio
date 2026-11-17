@@ -19,19 +19,12 @@ export function GlowCard({
       whileHover={hover ? { y: -4 } : undefined}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
       className={cn(
-        "theme-surface group relative rounded-3xl border shadow-lg shadow-black/5 backdrop-blur-xl",
-        "p-4 sm:p-6 md:p-8 transition-all duration-300",
-        hover && "hover:shadow-xl",
+        "theme-surface group relative rounded-2xl border shadow-sm shadow-black/5",
+        "p-4 transition-shadow duration-200 sm:p-6 md:p-8",
+        hover && "hover:shadow-md",
         className
       )}
     >
-      <div
-        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background:
-            "radial-gradient(600px circle at 50% 50%, rgba(168,85,247,0.08), transparent 45%)",
-        }}
-      />
       <div className="relative z-10">{children}</div>
     </motion.div>
   );

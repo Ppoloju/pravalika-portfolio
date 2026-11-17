@@ -50,8 +50,8 @@ export function SkillBadge({ name, category, className, onClick, isActive }: Ski
         "transition-all duration-300",
         hasSources ? "cursor-pointer" : "cursor-default opacity-70",
         isActive
-          ? "border-purple-500/60 bg-gradient-to-br from-purple-500/25 to-purple-600/15 text-white shadow-[0_0_25px_-8px_rgba(168,85,247,0.6)] scale-105"
-          : "border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.02] text-gray-300 hover:border-purple-500/40 hover:text-white hover:shadow-[0_0_25px_-8px_rgba(168,85,247,0.3)] hover:bg-gradient-to-br hover:from-purple-500/10 hover:to-cyan-500/5",
+          ? "border-accent bg-accent text-button-foreground"
+          : "border-border-theme bg-tint text-foreground hover:bg-surface",
         className
       )}
     >
@@ -60,17 +60,17 @@ export function SkillBadge({ name, category, className, onClick, isActive }: Ski
         transition={{ duration: 0.5 }}
         className={cn(
           "rounded-lg p-1.5 transition-colors",
-          isActive ? "bg-purple-500/30" : "bg-purple-500/10"
+          isActive ? "bg-button-foreground/15" : "bg-surface"
         )}
       >
-        <Icon className={cn("h-3.5 w-3.5", isActive ? "text-purple-200" : "text-purple-400")} aria-hidden />
+        <Icon className={cn("h-3.5 w-3.5", isActive ? "text-button-foreground" : "text-accent")} aria-hidden />
       </motion.div>
       {name}
       {hasSources && (
         <motion.span
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="h-1.5 w-1.5 rounded-full bg-cyan-400 ml-1"
+          className="ml-1 h-1.5 w-1.5 rounded-full bg-accent"
         />
       )}
     </motion.button>

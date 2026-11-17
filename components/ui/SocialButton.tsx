@@ -42,9 +42,8 @@ export function SocialButton({
       whileTap={{ scale: 0.95 }}
       className={cn(
         "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl",
-        "border border-white/10 bg-white/[0.04] text-gray-400",
-        "transition-colors duration-300",
-        "hover:border-purple-500/40 hover:text-white hover:shadow-[0_0_24px_-8px_rgba(168,85,247,0.5)]",
+        "border border-border-theme bg-tint text-muted",
+        "transition-colors duration-200 hover:bg-surface hover:text-foreground",
         className
       )}
     >

@@ -33,15 +33,15 @@ export function SectionHeading({
       )}
     >
       {label && (
-        <p className="text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-purple-400 mb-2 sm:mb-3">
+        <p className="mb-2 text-xs uppercase tracking-[0.15em] text-accent sm:mb-3 sm:text-sm sm:tracking-[0.2em]">
           {label}
         </p>
       )}
-      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
+      <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
+        <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted sm:mt-4 sm:text-base md:text-lg">
           {description}
         </p>
       )}

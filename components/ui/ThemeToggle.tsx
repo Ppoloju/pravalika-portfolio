@@ -43,7 +43,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={label}
       title={label}
-      className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-gray-400 transition-colors hover:text-white"
+      className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-border-theme bg-tint text-muted transition-colors hover:bg-surface hover:text-foreground"
     >
       <Icon className="h-5 w-5" aria-hidden="true" />
     </button>
