@@ -56,7 +56,7 @@ export function Navbar() {
             <span className="text-accent">.</span>
           </Link>
 
-          <ul className="hidden items-center gap-6 sm:gap-8 md:flex">
+          <ul className="hidden items-center gap-6 lg:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -71,7 +71,7 @@ export function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <GradientButton href={portfolio.resumePath} external>Resume</GradientButton>
             </div>
             <ThemeToggle />
@@ -82,7 +82,7 @@ export function Navbar() {
               aria-label="Open menu"
               aria-expanded={mobileOpen}
               aria-controls={mobileMenuId}
-              className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-border-theme bg-tint text-muted transition-colors hover:bg-surface hover:text-foreground md:hidden"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-border-theme bg-tint text-muted transition-colors hover:bg-surface hover:text-foreground lg:hidden"
             >
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>

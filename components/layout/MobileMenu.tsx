@@ -53,7 +53,7 @@ export function MobileMenu({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="theme-overlay fixed inset-0 z-40 backdrop-blur-sm md:hidden"
+            className="theme-overlay fixed inset-0 z-40 backdrop-blur-sm lg:hidden"
           />
           <motion.nav
             id={id}
@@ -61,7 +61,7 @@ export function MobileMenu({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="theme-surface-strong fixed right-0 top-0 z-50 flex h-full w-[min(100%,280px)] flex-col border-l p-5 sm:w-[min(100%,320px)] sm:p-6 md:hidden"
+            className="theme-surface-strong fixed right-0 top-0 z-50 flex h-full w-[min(100%,280px)] flex-col border-l p-5 sm:w-[min(100%,320px)] sm:p-6 lg:hidden"
             aria-label="Mobile navigation"
           >
             <div className="flex items-center justify-between">
