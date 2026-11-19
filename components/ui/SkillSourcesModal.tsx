@@ -91,7 +91,7 @@ export function SkillSourcesModal({
             aria-labelledby="skill-sources-title"
             aria-describedby="skill-sources-description"
             tabIndex={-1}
-            className="theme-surface relative z-10 w-full max-w-2xl rounded-2xl border p-5 shadow-xl outline-none sm:p-8"
+            className="theme-surface relative z-10 max-h-[calc(100dvh-2rem)] w-full max-w-2xl overflow-y-auto rounded-2xl border p-5 shadow-xl outline-none sm:p-8"
           >
             <button
               ref={closeButtonRef}
@@ -108,7 +108,7 @@ export function SkillSourcesModal({
                 <div className="h-8 w-1 rounded-full bg-accent" />
                 <h3
                   id="skill-sources-title"
-                  className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+                  className="min-w-0 break-words pr-12 text-2xl font-bold tracking-tight text-foreground sm:pr-0 sm:text-3xl"
                 >
                   {skillName}
                 </h3>

@@ -63,6 +63,10 @@ html {
   background: var(--background);
 }
 
+section[id] {
+  scroll-margin-top: 2.5rem;
+}
+
 body {
   min-height: 100vh;
   background-color: var(--background);

@@ -60,9 +60,9 @@ export function Certifications() {
           className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
           {orderedCertifications.map((cert: CertificationItem) => (
-            <motion.div key={cert.id} variants={staggerItem}>
+            <motion.div key={cert.id} variants={staggerItem} className="h-full">
               <GlowCard hover={true} className="h-full">
-                <div className="flex flex-col gap-4">
+                <div className="flex h-full flex-col gap-4">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="flex min-w-0 flex-1 items-start gap-2 sm:gap-3">
                       <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-border-theme bg-tint sm:h-10 sm:w-10">

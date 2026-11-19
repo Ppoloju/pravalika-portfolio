@@ -29,8 +29,8 @@ export function About() {
           className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2"
         >
           {portfolio.about.focus.map((item) => (
-            <motion.div key={item.title} variants={staggerItem}>
-              <GlowCard>
+            <motion.div key={item.title} variants={staggerItem} className="h-full">
+              <GlowCard className="h-full">
                 <h3 className="text-lg font-semibold text-foreground sm:text-xl md:text-2xl">
                   {item.title}
                 </h3>
